@@ -74,7 +74,7 @@ nav a {
 }
 
 nav a:hover{
-    color: tomato;
+    color: green;
 
 }
 
@@ -95,12 +95,129 @@ nav a:hover{
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, ,0, 0.35);
+    background: rgba(0, 0, 0, 0.38);
 
 }
 
+.parallax > * {
+  position: relative;
+  z-index: 2
+;
+}
 
-.perfil {
+.parallax-1 {
+  background-image:
+  url(../assets/images/paisaje-minecraft-atardecer-en-la-selva_8192x4560_xtrafondos.com.jpg);
+}
+
+.parallax-2 {
+  background-image:
+  url(../assets/images/jeovany.png);
+}
+
+.parallax-3 {
+  background-image:
+  url(../assets/images/el-maravilloso-hombre-arana_1280x720_xtrafondos.com.jpg);
+}
+
+.parallax-4 {
+  background-image:
+  url(../assets/images/paisaje-anime-atardecer-arte-digital_5640x2400_xtrafondos.com.jpg);
+
+}
+
+.parallax-5 {
+  background-image:
+  url(../assets/images/ciudad-de-noche-gta-6_1920x1080_xtrafondos.com.jpg);
+}
+
+.profile-img {
+    width: clamp(140px, 20vmin, 300px);
+    height: clamp(140px, 20vmin, 300px);
+    object-fit: cover;
+
+    border-radius: 50%; 
     display: block;
-    margin: 0 auto 30px auto;
+
+    box-shadow: 0 10px 30px rgba(1, 45, 190, 0.562);
+}
+
+
+.glass {
+  background:
+   rgba(0, 10, 1, 0.336);
+  color: white;
+  backdrop-filter:
+   blur(14px);
+   border: 
+   1px solid rgba(2, 78, 21, 0.301);
+   border-radius: 24px;
+   box-shadow: 0 30px 50px rgba(19, 105, 2, 0.329);
+}
+
+/* Configuración de la tarjeta horizontal */
+.hero-card {
+    display: flex;
+    flex-direction: row;        /* Coloca imagen y texto lado a lado */
+    align-items: center;        /* Centra verticalmente los elementos */
+    justify-content: center;
+    gap: 35px;                  /* Espacio de separación entre la foto y el texto */
+    max-width: 800px;           /* Ampliamos el ancho de la tarjeta */
+    width: 90%;
+    padding: 40px;
+    text-align: left;           /* Alinea todo el texto a la izquierda */
+}
+
+/* Alineación del bloque de texto interno */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    /* Alinea el título, párrafos y botón a la izquierda */
+}
+
+/* Ajustes de la imagen */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;             /* Evita que la foto se aplaste si el texto es largo */
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 10px rgba(43, 117, 167, 0.36);
+}
+
+/* Ajustes para la cita/frase */
+blockquote {
+    margin: 15px 0;
+    max-width: 100%;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ================================ */
+/* BOTÓN */
+/* ===================================== */
+
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding:
+    14px 30px;
+    background: 
+    rgba(255, 255, 255, 0.9);
+    color: #111827;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 12px 25px
+    rgba(0, 0, 0, 0.25);
+    background-color: #67e8f9;
+    color: white;
 }
