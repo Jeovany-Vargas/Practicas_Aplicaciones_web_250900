@@ -16,49 +16,40 @@
     <!--======================-->
     <nav id="inicio"> <!-- Etiqueta de semantica con el atributo id-->
         <ul> <!-- Unordered List, Lista desordenada-->
-            <li><a href="#inicio">nicio</a></li>
-            <li><a href="#acercaDeMi">Acerca de mí </a></li>
-            <li><a href="#aspiraciones">Aspiraciones </a></li>
-            <li><a href="#favoritos">Favoritos </a></li>
-            <li><a href="#redes">Redes Sociales </a></li>
+            <li class="menu_option"> <a href="#inicio">Inicio </a></li>
+            <li class="menu_option"> <a href="#acercaDeMi">Acerca de mí </a></li>
+            <li class="menu_option"> <a href="#aspiraciones">Aspiraciones </a></li>
+            <li class="menu_option"> <a href="#hobbies">Inicio </a></li>
+            <li class="menu_option"> <a href="#favoritos">Favoritos </a></li>
+            <li class="menu_option"> <a href="#redes">Redes Sociales </a></li>
 
         </ul>
     </nav>
-    <!-- ================= -->
-    <!-- HERO / PARALLAX 1  -->
-    <!-- ================= -->
-    <header id="inicio" class="parallax parallax-1">
-    <div class="glass hero-card">
-        <img src="assets/images/282013886.jpg" alt="Fotografia de perfil" class="profile-img">
+    
+ <header id="inicio" class="parallax parallax-1">
+    <div class="glass"> <!-- Aquí abre -->
 
-        <h1>Hola, soy Jeovany Cantellano Vargas </h1>
+        <!-- Columna Izquierda -->
+        <div class="bloque-foto">
+            <img src="assets/images/282013886.jpg" class="perfil" alt="Foto de jeovany">
+        </div>
 
-        <p>
-            Estudiante de Tecnologías de la Información | Apasionado por la tecnología | Soñador
-        </p>
+        <!-- Columna Derecha -->
+        <div class="contenido-derecho">
+            <h2>HOLA SOY JEOVANY VARGAS</h2>
+            <p class="tagline">soy estudiante de Desarrollo, apasionado por aprender y adquirir nuevas habilidades.</p>
+            <p class="frase">"Me interesa crecer profesionalmente y aplicar mis conocimientos en nuevos proyectos."</p>
+            <a href="#acerca" class="btn">Conóceme</a>
+        </div>
 
-        <blockquote>
-        "La disciplina de hoy construye el éxito del mañana"
-        </blockquote>
-
-        <a href="#acerca-de-mi"
-        class="boton">
-
-        Conoceme ↓
-
-        </a>
-
-    </div>
-
-        </header>
+    </div> <!-- 👈 Aquí debe cerrar el glass para que encierre a ambos bloques -->
+</header>
     
     <!-- Acerca de mí-->
-     <section id="acercaDeMi">
-        <h2> Acerca de mí </h2>
-        <div> <!--Etiqueta de estrucutura que agrupa elementos-->
-             <article>
-                <h3>MI PERFIL</h3>
-            </article>
+     <section id = "acerca" class = " seccion solido-1 "> 
+        <h2> 👤 Acerca de mí  </h2>
+        <div class = "contenedor">
+        <div class = "card"> <!--Etiqueta de estrucutura que agrupa elementos-->
             <p>
                 Soy estudiante de Tecnologias de la Inforfación y me interesa
                     aprender sobre desarrollo web, programación, diseño y nuevas tecnologías
@@ -69,28 +60,42 @@
                 que puedan ser útiles
             </p>
         </div>
-        <div>
+        <div class="datos">
             <article>
-                <h3> Edad </h3>
-                <p>18 años</p>
+                <h3>🤓 Edad </h3>
+                <p>19 años</p>
             </article>
 
             <article>
                 <h3>🏙️ Ciudad</h3>
-                <p>lazaro cardenas, Puebla</p>
+                <p>Xicotepec, Puebla</p>
             </article>
 
             <article>
                 <h3>👩‍🎓 Ocupación</h3>
                 <p>Estudiante</p>
             </article>
+
+            <article>
+                <h3>☕ Extra</h3>
+                <p>Me gusta el café</p>
+            </article>
         </div>
      </section>
+
+
+     <section class="parallax parallax-2">
+        <div class="glass frase">
+        <h2>Mis aspiraciones </h2>
+
+    </div>
+     </section>
+     
      <!--Aspiraciones-->
-     <section id="aspiraciones">
+     <section id="aspiraciones" class="seccion solido-2">
         <h2>🎯 Mis aspiraciones</h2>
 
-        <div>
+        <div class="grid">
             <article>
                 <h3>🎓 Terminar mi carrera</h3>
                 <p>
@@ -113,7 +118,11 @@
             </article>
         </div>
      </section>
-
+     <section class="parallax parallax-3">
+        <div class="glass frase"> 
+            <h2>MIS HOBBIES</h2>
+        </div>
+     </section>
      <!--Hobbies-->
      <section id="hobbies">
         <h2>😮 Lo que disfruto hacer</h2>
@@ -125,8 +134,8 @@
             </article>
 
             <article>
-                <h3>😼 VideoJuegos</h3>
-                <p>disfruto mucho jugar juegos como </p>
+                <h3>😼 Roblox</h3>
+                <p>EXplorar servidores de roblox</p>
             </article>
 
             <article>
@@ -136,7 +145,7 @@
 
             <article>
                 <h3>🥹 Series</h3>
-                <p>Disfruto de zombie</p>
+                <p>Disfruto de ver Kdramas</p>
             </article>
 
             <article>
@@ -150,6 +159,11 @@
             </article>
         </div>
      </section>
+          <section class="parallax parallax-4">
+        <div class="glass frase"> 
+            <h2>MIS HOBBIES</h2>
+        </div>
+     </section>
      <!--Favoritos-->
      <section id ="favoritos">
 
@@ -157,17 +171,17 @@
 
         <article>
             <h3>🎬 Pelicula favorita</h3>
-            <p>Spiderman</p>
+            <p>a 2 metros de ti</p>
         </article>
         
         <article>
             <h3>🎵 Canción favorita</h3>
-            <p>travis hunder</p>
+            <p>Just One Day</p>
         </article>
 
         <article>
             <h3>📖 Libro favorito</h3>
-            <p>mi razon de estar contigo</p>
+            <p>a 2 metros de ti</p>
         </article>
      </section>
 
@@ -175,8 +189,7 @@
     <!-- REDES SOCIALES -->
     <!-- ============================= -->
 
-    <section id="redes"
-             >
+    <section id="redes" class="seccion">
 
         <h2>🤓 Mis redes sociales</h2>
 
@@ -184,7 +197,7 @@
             Puedes encontrarme en:
         </p>
 
-        <div >
+        <div class="redes-sociales">
 
             <a href="https://github.com/"
                target="_blank"
@@ -216,7 +229,6 @@
                 <span>GitHub</span>
 
             </a>
-
 
             <a href="https://www.instagram.com/"
                target="_blank"
@@ -251,7 +263,6 @@
 
             </a>
 
-
             <a href="https://www.facebook.com/"
                target="_blank"
                aria-label="Facebook">
@@ -266,7 +277,6 @@
                 <span>Facebook</span>
 
             </a>
-
 
             <a href="https://www.tiktok.com/"
                target="_blank"
@@ -287,7 +297,6 @@
                 <span>TikTok</span>
 
             </a>
-
 
             <a href="https://www.linkedin.com/"
                target="_blank"
@@ -318,7 +327,6 @@
                 <span>LinkedIn</span>
 
             </a>
-
 
             <a href="https://www.youtube.com/"
                target="_blank"
@@ -369,3 +377,4 @@
     
 </body>
 </html>
+
