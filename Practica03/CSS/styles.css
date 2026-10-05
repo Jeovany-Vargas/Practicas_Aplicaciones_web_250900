@@ -74,7 +74,7 @@ nav a {
 }
 
 nav a:hover{
-    color: rgb(4, 141, 4);
+    color: rgb(19, 72, 85);
 
 }
 
@@ -105,19 +105,21 @@ nav a:hover{
 ;
 }
 
-.parallax-1 {
-  background-image:
-  url(../assets/images/paisaje-minecraft-atardecer-en-la-selva_8192x4560_xtrafondos.com.jpg);
-}
 
-.parallax-2 {
+
+.parallax-1 {
   background-image:
   url(../assets/images/jeovany.png);
 }
 
+.parallax-2 {
+  background-image:
+  url(../assets/images/paisaje-minecraft-atardecer-en-la-selva_8192x4560_xtrafondos.com.jpg);
+}
+
 .parallax-3 {
   background-image:
-  url(../assets/images/el-maravilloso-hombre-arana_1280x720_xtrafondos.com.jpg);
+  url(../assets/images/paisaje-bosque-al-atardecer-en-minecraft-dungeons-ii_5120x2880_xtrafondos.com.jpg);
 }
 
 .parallax-4 {
@@ -139,20 +141,20 @@ nav a:hover{
     border-radius: 50%; 
     display: block;
 
-    box-shadow: 0 10px 30px rgba(0, 109, 36, 0.562);
+    box-shadow: 0 10px 30px rgba(129, 124, 44, 0.562);
 }
 
 
 .glass {
   background:
    rgba(0, 10, 1, 0.336);
-  color: white;
+  color: rgb(0, 0, 0);
   backdrop-filter:
    blur(14px);
    border: 
-   1px solid rgba(3, 109, 29, 0.363);
+   1px solid rgba(6, 4, 31, 0.363);
    border-radius: 24px;
-   box-shadow: 0 30px 50px rgba(19, 105, 2, 0.329);
+   box-shadow: 0 30px 50px rgba(8, 33, 66, 0.329);
 }
 
 /* Configuración de la tarjeta horizontal */
@@ -182,7 +184,7 @@ blockquote {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 28px;
-    background-color: #025706c9;
+    background-color: #030c03c9;
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold ;
@@ -193,8 +195,8 @@ blockquote {
 .btn:hover {
     transform: translateY(-4px);
 
-    box-shadow: 0, 12px, 25px, rgba(0, 0, 0, 0.25);
-    background-color: #017207;
+    box-shadow: 0, 12px, 25px, rgba(14, 3, 119, 0.699);
+    background-color: #0a052793;
     color: rgb(138, 141, 139);
 
 }  
@@ -222,10 +224,34 @@ blockquote {
     height: clamp(140px, 20vw, 200px);
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid rgb(250, 248, 248);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    
-    display: block;
+
+    /* Borde azul luminoso */
+    border: 4px solid rgba(96, 165, 250, 0.85);
+
+    /* Glow más grande y difuminado */
+    box-shadow:
+        0 0 10px rgba(147, 197, 253, 0.90),
+        0 0 25px rgba(96, 165, 250, 0.65),
+        0 0 45px rgba(59, 130, 246, 0.45),
+        0 0 70px rgba(37, 99, 235, 0.25),
+        0 0 95px rgba(30, 64, 175, 0.12),
+        0 12px 35px rgba(0, 0, 0, 0.40);
+
+    transition: 0.4s ease;
+}
+
+.perfil:hover {
+    transform: scale(1.05);
+
+    border-color: rgba(191, 219, 254, 1);
+
+    box-shadow:
+        0 0 12px rgba(191, 219, 254, 1),
+        0 0 30px rgba(96, 165, 250, 0.80),
+        0 0 55px rgba(59, 130, 246, 0.55),
+        0 0 85px rgba(37, 99, 235, 0.30),
+        0 0 110px rgba(30, 64, 175, 0.15),
+        0 15px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* 3. Evitamos que la foto se aplaste si el texto es muy largo */
@@ -270,7 +296,7 @@ blockquote {
 /* ========================== */
 
 .solido-1 {
-    background: #000000;
+    background: #111827;
 }
 
 .solido-2 {
@@ -279,11 +305,11 @@ blockquote {
 }
 
 .solido-3 {
-    background: #e0f2fe;
+    background: #101725;
 }
 
 .solido-4 {
-    background: #1e293b;
+    background: #111827;
     color: white;
 }
 
@@ -297,17 +323,18 @@ blockquote {
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(0, 0, 0, 0.88);
     columns: #222;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     transition: 0.3s;
+    background: linear-gradient(145deg, #1e293b, #0e4246);
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.80);
+    box-shadow: 0 20px 40px rgba(38, 52, 75, 0.8);
 }
 
 /* ========================== */
@@ -324,7 +351,7 @@ blockquote {
 .datos article {
     padding: 20px;
     text-align: center;
-    background: rgb(21, 107, 3);
+    background: rgb(0, 0, 0);
     border-radius: 18px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 
@@ -337,9 +364,19 @@ blockquote {
 .grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 25px;
-    max-width: 1200px;
+    gap: 20px;
+    max-width: 1100px;
     margin:auto;
+    
+}
+
+.seis {
+    grid-template-columns: repeat(6, 1fr);
+    
+}
+
+.tres {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /* ========================== */
@@ -351,6 +388,7 @@ blockquote {
     max-height: 280px;
     object-fit: cover;
     border-radius: 15px;
+    
 }
 
 .seccion {
@@ -413,3 +451,42 @@ blockquote {
     height: 40px;           /* Controla el alto del icono */
 }
 
+
+
+.poster {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+
+    border-radius: 12px;
+    margin-top: 10px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+.musica-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.portada-musica {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+
+    border-radius: 15px;
+    margin-top: 10px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.nombre-cancion {
+    margin: 15px 0 8px;
+    font-weight: 500;
+}
+
+.reproductor {
+    width: 100%;
+    height: 45px;
+}

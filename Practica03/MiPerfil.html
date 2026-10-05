@@ -16,8 +16,8 @@
     <!--======================-->
     <nav id="inicio"> <!-- Etiqueta de semantica con el atributo id-->
         <ul> <!-- Unordered List, Lista desordenada-->
-            <li class="menu_option"> <a href="#inicio">Inicio </a></li>
-            <li class="menu_option"> <a href="#acercaDeMi">Acerca de mí </a></li>
+            <li class="menu_option"> <a href="#inicioo">Inicio </a></li>
+            <li class="menu_option"> <a href="#acerca">Acerca de mí </a></li>
             <li class="menu_option"> <a href="#aspiraciones">Aspiraciones </a></li>
             <li class="menu_option"> <a href="#hobbies">Inicio </a></li>
             <li class="menu_option"> <a href="#favoritos">Favoritos </a></li>
@@ -26,7 +26,7 @@
         </ul>
     </nav>
     
- <header id="inicio" class="parallax parallax-1">
+ <header id="inicioo" class="parallax parallax-1">
     <div class="glass"> <!-- Aquí abre -->
 
         <!-- Columna Izquierda -->
@@ -46,7 +46,7 @@
 </header>
     
     <!-- Acerca de mí-->
-     <section id = "acerca" class = " seccion solido-1 "> 
+     <section id ="acerca" class = " seccion solido-1 "> 
         <h2> 👤 Acerca de mí  </h2>
         <div class = "contenedor">
         <div class = "card"> <!--Etiqueta de estrucutura que agrupa elementos-->
@@ -61,22 +61,22 @@
             </p>
         </div>
         <div class="datos">
-            <article>
+            <article class="card">
                 <h3>🤓 Edad </h3>
                 <p>19 años</p>
             </article>
 
-            <article>
+            <article class="card" >
                 <h3>🏙️ Ciudad</h3>
                 <p>Xicotepec, Puebla</p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>👩‍🎓 Ocupación</h3>
                 <p>Estudiante</p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>☕ Extra</h3>
                 <p>Me gusta el café</p>
             </article>
@@ -96,21 +96,21 @@
         <h2>🎯 Mis aspiraciones</h2>
 
         <div class="grid">
-            <article>
+            <article class="card">
                 <h3>🎓 Terminar mi carrera</h3>
                 <p>
                     Concluir mis estudios y fortalecer mis habilidades profesionales.
                 </p>
-            </article>
+            </article >
 
-            <article>
+            <article class="card">
                 <h3>👩🏻‍💻 Ser desarrollador</h3>
                 <p>
                     Trabajar en proyectos de software y crear aplicaciones útiles.
                 </p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>🧳 Viajar</h3>
                 <p>
                     Conocer otras ciudades, culturas y nuevas experiencias.
@@ -123,37 +123,40 @@
             <h2>MIS HOBBIES</h2>
         </div>
      </section>
-     <!--Hobbies-->
-     <section id="hobbies">
-        <h2>😮 Lo que disfruto hacer</h2>
-        <div>
 
-            <article>
+     <!--Hobbies-->
+     <section id="hobbies" class="seccion solido-3">
+
+        <h2>😮 Lo que disfruto hacer</h2>
+
+        <div class="grid seis">
+
+            <article class="card">
                 <h3>👩🏻‍💻 Programar</h3>
                 <p> Crear soluciones </p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>😼 Roblox</h3>
                 <p>EXplorar servidores de roblox</p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>🎧 Música</h3>
                 <p> </p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>🥹 Series</h3>
                 <p>Disfruto de ver Kdramas</p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>🌎 Viajar</h3>
                 <p>Conocer nuevos lugares</p>
             </article>
 
-            <article>
+            <article class="card">
                 <h3>📸 Fotografía</h3>
                 <p>Capturar momentos</p>
             </article>
@@ -161,28 +164,39 @@
      </section>
           <section class="parallax parallax-4">
         <div class="glass frase"> 
-            <h2>MIS HOBBIES</h2>
+            <h2>MIS FAVORITOS</h2>
         </div>
      </section>
      <!--Favoritos-->
-     <section id ="favoritos">
+     <section id ="favoritos" class="seccion solido-4">
 
         <h2>Mis Favoritos</h2>
-
-        <article>
+        <div class="grid tres">
+        <article class="card">
             <h3>🎬 Pelicula favorita</h3>
-            <p>a 2 metros de ti</p>
+            <p>SPIDERMAN</p>
+
+            <img src="assets/images/SPITER.jpeg" class="poster" alt="SPIDERMAN">
         </article>
         
-        <article>
+        <article class="card">
             <h3>🎵 Canción favorita</h3>
-            <p>Just One Day</p>
+            <p>TE QUIERO TANTO</p>
+            <img src="assets/images/keeevi.jpg"
+                alt="Portada de Te Quiero Tanto"
+                 class="portada-musica">
+                <p class="nombre-cancion">TE QUIERO TANTO</p>
+
+                 <audio controls class="reproductor">
+                <source src="assets/images/YTDown.com_YouTube_Kevin-Kaarl-te-quiero-tanto-Video-Oficia_Media_q07Gd6Q-7dY_009_128k.mp3" type="audio/mpeg">
+                 </audio>
         </article>
 
-        <article>
+        <article class="card">
             <h3>📖 Libro favorito</h3>
             <p>a 2 metros de ti</p>
         </article>
+        </div>
      </section>
 
      <!-- ============================= -->
