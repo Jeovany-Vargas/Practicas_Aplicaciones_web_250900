@@ -1,83 +1,37 @@
-// Carrusel y modal multimedia sin librerías externas.
-const tarjetas = [...document.querySelectorAll('.favorito-card')];
-const pista = document.getElementById('pista');
-const indicadores = document.getElementById('indicadores');
-let indice = 0;
-function mostrar(n) {
-  if (!tarjetas.length) return;
-  indice = (n + tarjetas.length) % tarjetas.length;
-  pista.style.transform = `translateX(-${indice * 100}%)`;
-  [...indicadores.children].forEach((punto, i) => {
-    punto.classList.toggle('activo', i === indice);
-    punto.setAttribute('aria-current', i === indice ? 'true' : 'false');
-  });
-}
-tarjetas.forEach((tarjeta, i) => {
-  const punto = document.createElement('button');
-  punto.type = 'button';
-  punto.setAttribute('aria-label', `Mostrar favorito ${i + 1}`);
-  punto.addEventListener('click', () => mostrar(i));
-  indicadores.appendChild(punto);
-});
-document.getElementById('anterior')?.addEventListener('click', () => mostrar(indice - 1));
-document.getElementById('siguiente')?.addEventListener('click', () => mostrar(indice + 1));
-mostrar(0);
-const modal = document.getElementById('modal-favoritos');
-const contenido = document.getElementById('modal-contenido');
-const titulo = document.getElementById('modal-titulo');
-const cerrar = document.getElementById('cerrar-modal');
-let focoAnterior = null;
-function abrir(tarjeta) {
-  focoAnterior = document.activeElement;
-  titulo.textContent = tarjeta.dataset.titulo || 'Mi favorito';
-  const tipo = tarjeta.dataset.tipo;
-  const src = tarjeta.dataset.src;
-  let visor;
-  if (tipo === 'video') {
-    visor = document.createElement('video');
-    visor.controls = true;
-    visor.playsInline = true;
-  } else if (tipo === 'audio') {
-    visor = document.createElement('audio');
-    visor.controls = true;
-  } else if (tipo === 'pdf') {
-    visor = document.createElement('iframe');
-    visor.title = 'Vista previa del libro PDF';
-  } else return;
-  visor.src = src;
-  // Si el archivo no está subido, el navegador no podrá mostrarlo.
-  if (tipo !== 'pdf') visor.addEventListener('error', () => {
-    const aviso = document.createElement('p');
-    aviso.className = 'modal-error';
-    aviso.textContent = 'No se pudo cargar el archivo multimedia. Revisa que esté subido a GitHub con el mismo nombre y ruta.';
-    contenido.replaceChildren(aviso);
-  });
-  contenido.replaceChildren(visor);
-  modal.hidden = false;
-  document.body.classList.add('modal-abierto');
-  document.querySelectorAll('body > :not(#modal-favoritos)').forEach(el => { el.inert = true; });
-  cerrar.focus();
-}
-function cerrarModal() {
-  contenido.querySelectorAll('video,audio').forEach(media => media.pause());
-  contenido.replaceChildren();
-  modal.hidden = true;
-  document.body.classList.remove('modal-abierto');
-  document.querySelectorAll('body > :not(#modal-favoritos)').forEach(el => { el.inert = false; });
-  focoAnterior?.focus();
-}
-tarjetas.forEach(tarjeta => tarjeta.addEventListener('click', () => abrir(tarjeta)));
-cerrar.addEventListener('click', cerrarModal);
-modal.addEventListener('click', e => { if (e.target === modal) cerrarModal(); });
-document.addEventListener('keydown', e => {
-  if (modal.hidden) return;
-  if (e.key === 'Escape') cerrarModal();
-  if (e.key === 'Tab') {
-    const elementos = [cerrar, ...contenido.querySelectorAll('button,a,video,audio,iframe')];
-    const primero = elementos[0], ultimo = elementos[elementos.length - 1];
-    if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
-    else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
-  }
-});
-const anio = document.getElementById('anio');
-if (anio) anio.textContent = `© ${new Date().getFullYear()} - Mi primera página web`;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Perfil personal de Jeovany Cantellano Vargas">
+<title>Jeovany Cantellano Vargas | Desarrollo de Software Multiplataforma</title>
+<link rel="icon" href="assets/images/nino.png" type="image/png">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/app2.js" defer></script>
+</head>
+<body>
+<nav id="menu" aria-label="Navegación principal"><ul>
+<li><a href="#inicio">Inicio</a></li><li><a href="#acerca">Acerca de mí</a></li><li><a href="#aspiraciones">Aspiraciones</a></li><li><a href="#hobbies">Hobbies</a></li><li><a href="#favoritos">Favoritos</a></li><li><a href="#redes">Redes Sociales</a></li>
+</ul></nav>
+<header id="inicio" class="parallax parallax-1"><div class="glass hero">
+<div class="bloque-foto"><img src="assets/images/282013886.jpg" class="perfil" alt="Foto de Jeovany"></div>
+<div class="contenido-derecho"><h1>HOLA, SOY JEOVANY VARGAS</h1><p class="tagline">Soy estudiante de Desarrollo de Software, apasionado por aprender y adquirir nuevas habilidades.</p><p class="frase">“Me interesa crecer profesionalmente y aplicar mis conocimientos en nuevos proyectos.”</p><a class="btn" href="#acerca">Conóceme</a></div>
+</div></header>
+<section id="acerca" class="seccion solido-1"><h2>👤 Acerca de mí</h2><div class="contenedor"><div class="card"><p>Soy estudiante de Tecnologías de la Información y me interesa aprender sobre desarrollo web, programación, diseño y nuevas tecnologías.</p><p>Me gusta resolver problemas, crear cosas nuevas y desarrollar proyectos que puedan ser útiles.</p></div>
+<div class="datos"><article><h3>🤓 Edad</h3><p>19 años</p></article><article><h3>🏙️ Ciudad</h3><p>Xicotepec, Puebla</p></article><article><h3>👨‍🎓 Ocupación</h3><p>Estudiante</p></article><article><h3>☕ Extra</h3><p>Me gusta el café</p></article></div></div></section>
+<section class="parallax parallax-2"><div class="glass titulo-parallax"><h2>🎯 Mis aspiraciones</h2></div></section>
+<section id="aspiraciones" class="seccion solido-2"><div class="grid"><article class="card"><h3>🎓 Terminar mi carrera</h3><p>Concluir mis estudios y fortalecer mis habilidades profesionales.</p></article><article class="card"><h3>👨‍💻 Ser desarrollador</h3><p>Trabajar en proyectos de software y crear aplicaciones útiles.</p></article><article class="card"><h3>🧳 Viajar</h3><p>Conocer otras ciudades, culturas y nuevas experiencias.</p></article></div></section>
+<section class="parallax parallax-3"><div class="glass titulo-parallax"><h2>😮 Mis hobbies</h2></div></section>
+<section id="hobbies" class="seccion solido-3"><div class="grid seis"><article class="card"><h3>👨‍💻 Programar</h3><p>Crear soluciones</p></article><article class="card"><h3>🎮 Roblox</h3><p>Explorar servidores de Roblox</p></article><article class="card"><h3>🎧 Música</h3><p>Escuchar mis canciones favoritas</p></article><article class="card"><h3>📺 Series</h3><p>Disfrutar series</p></article><article class="card"><h3>🌎 Viajar</h3><p>Conocer nuevos lugares</p></article><article class="card"><h3>📸 Fotografía</h3><p>Capturar momentos</p></article></div></section>
+<section class="parallax parallax-4"><div class="glass titulo-parallax"><h2>✨ Mis favoritos ✨</h2></div></section>
+<section id="favoritos" class="seccion solido-4"><div class="contenedor"><p class="favoritos-intro">Descubre mi película, canción y libro favoritos. Selecciona una tarjeta para explorar su contenido.</p>
+<div class="carrusel" aria-label="Carrusel de favoritos"><button class="carrusel-flecha" id="anterior" type="button" aria-label="Anterior">&#10094;</button><div class="carrusel-ventana"><div class="carrusel-pista" id="pista">
+<button class="favorito-card" type="button" data-tipo="video" data-src="assets/videos/spiderman.mp4" data-titulo="Mi película favorita: Spider-Man"><img src="assets/images/SPITER.jpeg" alt="Portada de Spider-Man" loading="lazy"><span class="favorito-info"><strong>🎬 Spider-Man</strong><small>Ver tráiler</small></span></button>
+<button class="favorito-card" type="button" data-tipo="audio" data-src="assets/images/YTDown.com_YouTube_Kevin-Kaarl-te-quiero-tanto-Video-Oficia_Media_q07Gd6Q-7dY_009_128k.mp3" data-titulo="Mi canción favorita: Te quiero tanto"><img src="assets/images/keeevi.jpg" alt="Portada de Te quiero tanto" loading="lazy"><span class="favorito-info"><strong>🎵 Te quiero tanto — Kevin Kaarl</strong><small>Escuchar canción</small></span></button>
+<button class="favorito-card" type="button" data-tipo="pdf" data-src="assets/documents/a-dos-metros-de-ti.pdf" data-titulo="Mi libro favorito: A dos metros de ti"><span class="portada-libro" aria-hidden="true">📖</span><span class="favorito-info"><strong>📚 A dos metros de ti</strong><small>Ver PDF</small></span></button>
+</div></div><button class="carrusel-flecha" id="siguiente" type="button" aria-label="Siguiente">&#10095;</button></div><div class="carrusel-indicadores" id="indicadores" aria-label="Seleccionar favorito"></div></div></section>
+<div class="modal-favoritos" id="modal-favoritos" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden><div class="modal-panel"><div class="modal-cabecera"><h2 id="modal-titulo">Mi favorito</h2><button id="cerrar-modal" type="button" aria-label="Cerrar ventana">&times;</button></div><div class="modal-contenido" id="modal-contenido"></div></div></div>
+<section id="redes" class="seccion redes solido-1"><h2>🌐 Mis redes sociales</h2><p class="centrado">Puedes encontrarme en:</p><div class="redes-sociales">
+<a href="https://github.com/Jeovany-Vargas" target="_blank" rel="noopener noreferrer"><span class="icono-red">⌘</span><span>GitHub</span></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">◎</span><span>Instagram</span></a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">f</span><span>Facebook</span></a><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">♪</span><span>TikTok</span></a><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">in</span><span>LinkedIn</span></a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">▶</span><span>YouTube</span></a>
+</div></section><footer><p>Mi primera página web</p><p id="anio"></p><a href="#inicio">↑ Volver al inicio</a></footer>
+</body></html>
