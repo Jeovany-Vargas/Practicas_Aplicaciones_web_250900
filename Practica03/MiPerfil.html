@@ -1,37 +1,422 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Perfil personal de Jeovany Cantellano Vargas">
-<title>Jeovany Cantellano Vargas | Desarrollo de Software Multiplataforma</title>
-<link rel="icon" href="assets/images/nino.png" type="image/png">
-<link rel="stylesheet" href="css/styles.css">
-<script src="js/app2.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil personal de Jeovany Cantellano Vargas">
+
+    <title>
+        Jeovany Cantellano Vargas | Desarrollo de Software Multiplataforma
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/nino.png" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JavaScript -->
+    <script src="js/app2.js" defer></script>
 </head>
+
 <body>
-<nav id="menu" aria-label="Navegación principal"><ul>
-<li><a href="#inicio">Inicio</a></li><li><a href="#acerca">Acerca de mí</a></li><li><a href="#aspiraciones">Aspiraciones</a></li><li><a href="#hobbies">Hobbies</a></li><li><a href="#favoritos">Favoritos</a></li><li><a href="#redes">Redes Sociales</a></li>
-</ul></nav>
-<header id="inicio" class="parallax parallax-1"><div class="glass hero">
-<div class="bloque-foto"><img src="assets/images/282013886.jpg" class="perfil" alt="Foto de Jeovany"></div>
-<div class="contenido-derecho"><h1>HOLA, SOY JEOVANY VARGAS</h1><p class="tagline">Soy estudiante de Desarrollo de Software, apasionado por aprender y adquirir nuevas habilidades.</p><p class="frase">“Me interesa crecer profesionalmente y aplicar mis conocimientos en nuevos proyectos.”</p><a class="btn" href="#acerca">Conóceme</a></div>
-</div></header>
-<section id="acerca" class="seccion solido-1"><h2>👤 Acerca de mí</h2><div class="contenedor"><div class="card"><p>Soy estudiante de Tecnologías de la Información y me interesa aprender sobre desarrollo web, programación, diseño y nuevas tecnologías.</p><p>Me gusta resolver problemas, crear cosas nuevas y desarrollar proyectos que puedan ser útiles.</p></div>
-<div class="datos"><article><h3>🤓 Edad</h3><p>19 años</p></article><article><h3>🏙️ Ciudad</h3><p>Xicotepec, Puebla</p></article><article><h3>👨‍🎓 Ocupación</h3><p>Estudiante</p></article><article><h3>☕ Extra</h3><p>Me gusta el café</p></article></div></div></section>
-<section class="parallax parallax-2"><div class="glass titulo-parallax"><h2>🎯 Mis aspiraciones</h2></div></section>
-<section id="aspiraciones" class="seccion solido-2"><div class="grid"><article class="card"><h3>🎓 Terminar mi carrera</h3><p>Concluir mis estudios y fortalecer mis habilidades profesionales.</p></article><article class="card"><h3>👨‍💻 Ser desarrollador</h3><p>Trabajar en proyectos de software y crear aplicaciones útiles.</p></article><article class="card"><h3>🧳 Viajar</h3><p>Conocer otras ciudades, culturas y nuevas experiencias.</p></article></div></section>
-<section class="parallax parallax-3"><div class="glass titulo-parallax"><h2>😮 Mis hobbies</h2></div></section>
-<section id="hobbies" class="seccion solido-3"><div class="grid seis"><article class="card"><h3>👨‍💻 Programar</h3><p>Crear soluciones</p></article><article class="card"><h3>🎮 Roblox</h3><p>Explorar servidores de Roblox</p></article><article class="card"><h3>🎧 Música</h3><p>Escuchar mis canciones favoritas</p></article><article class="card"><h3>📺 Series</h3><p>Disfrutar series</p></article><article class="card"><h3>🌎 Viajar</h3><p>Conocer nuevos lugares</p></article><article class="card"><h3>📸 Fotografía</h3><p>Capturar momentos</p></article></div></section>
-<section class="parallax parallax-4"><div class="glass titulo-parallax"><h2>✨ Mis favoritos ✨</h2></div></section>
-<section id="favoritos" class="seccion solido-4"><div class="contenedor"><p class="favoritos-intro">Descubre mi película, canción y libro favoritos. Selecciona una tarjeta para explorar su contenido.</p>
-<div class="carrusel" aria-label="Carrusel de favoritos"><button class="carrusel-flecha" id="anterior" type="button" aria-label="Anterior">&#10094;</button><div class="carrusel-ventana"><div class="carrusel-pista" id="pista">
-<button class="favorito-card" type="button" data-tipo="video" data-src="assets/videos/spiderman.mp4" data-titulo="Mi película favorita: Spider-Man"><img src="assets/images/SPITER.jpeg" alt="Portada de Spider-Man" loading="lazy"><span class="favorito-info"><strong>🎬 Spider-Man</strong><small>Ver tráiler</small></span></button>
-<button class="favorito-card" type="button" data-tipo="audio" data-src="assets/images/YTDown.com_YouTube_Kevin-Kaarl-te-quiero-tanto-Video-Oficia_Media_q07Gd6Q-7dY_009_128k.mp3" data-titulo="Mi canción favorita: Te quiero tanto"><img src="assets/images/keeevi.jpg" alt="Portada de Te quiero tanto" loading="lazy"><span class="favorito-info"><strong>🎵 Te quiero tanto — Kevin Kaarl</strong><small>Escuchar canción</small></span></button>
-<button class="favorito-card" type="button" data-tipo="pdf" data-src="assets/documents/a-dos-metros-de-ti.pdf" data-titulo="Mi libro favorito: A dos metros de ti"><span class="portada-libro" aria-hidden="true">📖</span><span class="favorito-info"><strong>📚 A dos metros de ti</strong><small>Ver PDF</small></span></button>
-</div></div><button class="carrusel-flecha" id="siguiente" type="button" aria-label="Siguiente">&#10095;</button></div><div class="carrusel-indicadores" id="indicadores" aria-label="Seleccionar favorito"></div></div></section>
-<div class="modal-favoritos" id="modal-favoritos" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden><div class="modal-panel"><div class="modal-cabecera"><h2 id="modal-titulo">Mi favorito</h2><button id="cerrar-modal" type="button" aria-label="Cerrar ventana">&times;</button></div><div class="modal-contenido" id="modal-contenido"></div></div></div>
-<section id="redes" class="seccion redes solido-1"><h2>🌐 Mis redes sociales</h2><p class="centrado">Puedes encontrarme en:</p><div class="redes-sociales">
-<a href="https://github.com/Jeovany-Vargas" target="_blank" rel="noopener noreferrer"><span class="icono-red">⌘</span><span>GitHub</span></a><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">◎</span><span>Instagram</span></a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">f</span><span>Facebook</span></a><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">♪</span><span>TikTok</span></a><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">in</span><span>LinkedIn</span></a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><span class="icono-red">▶</span><span>YouTube</span></a>
-</div></section><footer><p>Mi primera página web</p><p id="anio"></p><a href="#inicio">↑ Volver al inicio</a></footer>
-</body></html>
+
+    <!-- ===================================== -->
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <!-- ===================================== -->
+
+    <nav id="menu" aria-label="Navegación principal">
+        <ul>
+            <li>
+                <a href="#inicio">Inicio</a>
+            </li>
+
+            <li>
+                <a href="#acerca">Acerca de mí</a>
+            </li>
+
+            <li>
+                <a href="#aspiraciones">Aspiraciones</a>
+            </li>
+
+            <li>
+                <a href="#hobbies">Hobbies</a>
+            </li>
+
+            <li>
+                <a href="#favoritos">Favoritos</a>
+            </li>
+
+            <li>
+                <a href="#redes">Redes Sociales</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- ===================================== -->
+    <!-- INICIO / PRESENTACIÓN PERSONAL -->
+    <!-- ===================================== -->
+
+    <header id="inicio" class="parallax parallax-1">
+
+        <div class="glass hero">
+
+            <!-- Foto de perfil -->
+            <div class="bloque-foto">
+                <img
+                    src="assets/images/282013886.jpg"
+                    class="perfil"
+                    alt="Foto de Jeovany"
+                >
+            </div>
+
+            <!-- Información personal -->
+            <div class="contenido-derecho">
+
+                <h1>HOLA, SOY JEOVANY VARGAS</h1>
+
+                <p class="tagline">
+                    Soy estudiante de Desarrollo de Software,
+                    apasionado por aprender y adquirir nuevas habilidades.
+                </p>
+
+                <p class="frase">
+                    “Me interesa crecer profesionalmente y aplicar
+                    mis conocimientos en nuevos proyectos.”
+                </p>
+
+                <a class="btn" href="#acerca">
+                    Conóceme
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ===================================== -->
+    <!-- ACERCA DE MÍ -->
+    <!-- ===================================== -->
+
+    <section id="acerca" class="seccion solido-1">
+
+        <h2>👤 Acerca de mí</h2>
+
+        <div class="contenedor">
+
+            <div class="card">
+
+                <p>
+                    Soy estudiante de Tecnologías de la Información
+                    y me interesa aprender sobre desarrollo web,
+                    programación, diseño y nuevas tecnologías.
+                </p>
+
+                <p>
+                    Me gusta resolver problemas, crear cosas nuevas
+                    y desarrollar proyectos que puedan ser útiles.
+                </p>
+
+            </div>
+
+
+            <!-- Datos personales -->
+            <div class="datos">
+
+                <article>
+                    <h3>🤓 Edad</h3>
+                    <p>19 años</p>
+                </article>
+
+                <article>
+                    <h3>🏙️ Ciudad</h3>
+                    <p>Xicotepec, Puebla</p>
+                </article>
+
+                <article>
+                    <h3>👨‍🎓 Ocupación</h3>
+                    <p>Estudiante</p>
+                </article>
+
+                <article>
+                    <h3>☕ Extra</h3>
+                    <p>Me gusta el café</p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- FONDO PARALLAX: ASPIRACIONES -->
+    <!-- ===================================== -->
+
+    <section class="parallax parallax-2">
+
+        <div class="glass titulo-parallax">
+            <h2>🎯 Mis aspiraciones</h2>
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- MIS ASPIRACIONES -->
+    <!-- ===================================== -->
+
+    <section id="aspiraciones" class="seccion solido-2">
+
+        <div class="grid">
+
+            <article class="card">
+
+                <h3>🎓 Terminar mi carrera</h3>
+
+                <p>
+                    Concluir mis estudios y fortalecer
+                    mis habilidades profesionales.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>👨‍💻 Ser desarrollador</h3>
+
+                <p>
+                    Trabajar en proyectos de software
+                    y crear aplicaciones útiles.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>🧳 Viajar</h3>
+
+                <p>
+                    Conocer otras ciudades, culturas
+                    y nuevas experiencias.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- FONDO PARALLAX: HOBBIES -->
+    <!-- ===================================== -->
+
+    <section class="parallax parallax-3">
+
+        <div class="glass titulo-parallax">
+            <h2>😮 Mis hobbies</h2>
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- MIS HOBBIES -->
+    <!-- ===================================== -->
+
+    <section id="hobbies" class="seccion solido-3">
+
+        <div class="grid seis">
+
+            <article class="card">
+                <h3>👨‍💻 Programar</h3>
+                <p>Crear soluciones</p>
+            </article>
+
+            <article class="card">
+                <h3>🎮 Roblox</h3>
+                <p>Explorar servidores de Roblox</p>
+            </article>
+
+            <article class="card">
+                <h3>🎧 Música</h3>
+                <p>Escuchar mis canciones favoritas</p>
+            </article>
+
+            <article class="card">
+                <h3>📺 Series</h3>
+                <p>Disfrutar series</p>
+            </article>
+
+            <article class="card">
+                <h3>🌎 Viajar</h3>
+                <p>Conocer nuevos lugares</p>
+            </article>
+
+            <article class="card">
+                <h3>📸 Fotografía</h3>
+                <p>Capturar momentos</p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- FONDO PARALLAX: FAVORITOS -->
+    <!-- ===================================== -->
+
+    <section class="parallax parallax-4">
+
+        <div class="glass titulo-parallax">
+            <h2>✨ Mis favoritos ✨</h2>
+        </div>
+
+    </section>
+
+
+    <!-- ===================================== -->
+    <!-- MIS FAVORITOS -->
+    <!-- ===================================== -->
+
+    <section id="favoritos" class="seccion solido-4">
+
+        <div class="contenedor">
+
+            <p class="favoritos-intro">
+                Descubre mi película, canción y libro favoritos.
+                Selecciona una tarjeta para explorar su contenido.
+            </p>
+
+
+            <!-- Carrusel -->
+            <div class="carrusel" aria-label="Carrusel de favoritos">
+
+                <!-- Flecha anterior -->
+                <button
+                    class="carrusel-flecha"
+                    id="anterior"
+                    type="button"
+                    aria-label="Anterior"
+                >
+                    &#10094;
+                </button>
+
+
+                <!-- Ventana del carrusel -->
+                <div class="carrusel-ventana">
+
+                    <div class="carrusel-pista" id="pista">
+
+
+                        <!-- PELÍCULA FAVORITA -->
+                        <button
+                            class="favorito-card"
+                            type="button"
+                            data-tipo="video"
+                            data-src="assets/videos/spiderman.mp4"
+                            data-titulo="Mi película favorita: Spider-Man"
+                        >
+
+                            <img
+                                src="assets/images/SPITER.jpeg"
+                                alt="Portada de Spider-Man"
+                                loading="lazy"
+                            >
+
+                            <span class="favorito-info">
+
+                                <strong>
+                                    🎬 Spider-Man
+                                </strong>
+
+                                <small>
+                                    Ver tráiler
+                                </small>
+
+                            </span>
+
+                        </button>
+
+
+                        <!-- CANCIÓN FAVORITA -->
+                        <button
+                            class="favorito-card"
+                            type="button"
+                            data-tipo="audio"
+                            data-src="assets/images/YTDown.com_YouTube_Kevin-Kaarl-te-quiero-tanto-Video-Oficia_Media_q07Gd6Q-7dY_009_128k.mp3"
+                            data-titulo="Mi canción favorita: Te quiero tanto"
+                        >
+
+                            <img
+                                src="assets/images/keeevi.jpg"
+                                alt="Portada de Te quiero tanto"
+                                loading="lazy"
+                            >
+
+                            <span class="favorito-info">
+
+                                <strong>
+                                    🎵 Te quiero tanto — Kevin Kaarl
+                                </strong>
+
+                                <small>
+                                    Escuchar canción
+                                </small>
+
+                            </span>
+
+                        </button>
+
+
+                        <!-- LIBRO FAVORITO -->
+                        <button
+                            class="favorito-card"
+                            type="button"
+                            data-tipo="pdf"
+                            data-src="assets/documents/a-dos-metros-de-ti.pdf"
+                            data-titulo="Mi libro favorito: A dos metros de ti"
+                        >
+
+                            <span
+                                class="portada-libro"
+                                aria-hidden="true"
+                            >
+                                📖
+                            </span>
+
+                            <span class="favorito-info">
+
+                                <strong>
+                                    📚 A dos metros de ti
+                                </strong>
+
+                                <small>
+                                    Ver PDF
+                                </small>
+
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Flecha siguiente -->
+                <button
+                    class="carrusel-flecha"
+                    id="siguiente"
+                    type="button"
+                    aria-label="Siguiente"
