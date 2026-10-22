@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MecaGest: registro de usuarios y gestión de citas y herramientas para taller mecánico.">
+    <title>MecaGest | Registro de usuarios</title>
+    <style>
+/* MECAGEST: tema oscuro azul */
+:root {
+    --fondo: #0b1120;
+    --panel: #151f32;
+    --panel-secundario: #1c2940;
+    --azul: #3b82f6;
+    --azul-claro: #60a5fa;
+    --texto: #e5edf8;
+    --texto-secundario: #9caec7;
+    --borde: #30415d;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0; padding: 30px;
+    background: var(--fondo); color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px; line-height: 1.6;
+}
+header {
+    max-width: 1200px; margin: 0 auto 30px; padding: 30px;
+    background: linear-gradient(135deg, #172b4d, #111827);
+    border: 1px solid var(--borde); border-left: 5px solid var(--azul);
+    border-radius: 16px; box-shadow: 0 12px 30px #0003;
+}
+.eyebrow { margin: 0 0 8px; color: var(--azul-claro); font-size: 12px; font-weight: 800; letter-spacing: 2px; }
+header h1 { margin: 0 0 8px; color: var(--azul-claro); font-size: 36px; font-weight: 800; letter-spacing: 1px; }
+header h2 { margin: 0 0 10px; color: white; font-size: 25px; }
+header p:last-child { margin-bottom: 0; color: var(--texto-secundario); }
+main { max-width: 1200px; margin: 0 auto; }
+form { margin-bottom: 28px; }
+fieldset, .section-card {
+    min-width: 0; margin: 0 0 22px; padding: 24px;
+    background: var(--panel); border: 1px solid var(--borde);
+    border-radius: 14px; box-shadow: 0 8px 20px #0002;
+    transition: border-color .25s;
+}
+fieldset:hover, .section-card:hover { border-color: #42618d; }
+legend {
+    padding: 7px 14px; background: #1d3760; border: 1px solid #355987;
+    border-radius: 8px; color: #93c5fd; font-size: 16px; font-weight: 700;
+}
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 22px; }
+.form-group { display: flex; flex-direction: column; align-items: stretch; min-width: 0; gap: 5px; }
+.full-width { grid-column: 1 / -1; }
+label, .field-label { color: var(--texto); font-weight: 500; }
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]):not([type="range"]):not([type="color"]),
+select, textarea {
+    width: 100%; max-width: 100%; min-height: 42px; padding: 10px 12px;
+    background: #0c1628; border: 1px solid var(--borde); border-radius: 8px;
+    color: var(--texto); font: inherit; transition: border-color .2s, box-shadow .2s;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--azul-claro); box-shadow: 0 0 0 3px #3b82f62e; }
+input::placeholder, textarea::placeholder { color: #71839e; }
+input[type="checkbox"], input[type="radio"] { width: 16px; height: 16px; margin: 0 7px 0 0; accent-color: var(--azul); vertical-align: middle; cursor: pointer; }
+.check-label { display: flex; align-items: center; gap: 6px; }
+.inline-options { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; min-height: 42px; }
+input[type="color"] { width: 58px; height: 42px; padding: 4px; background: var(--panel-secundario); border: 1px solid var(--borde); border-radius: 8px; cursor: pointer; }
+input[type="range"] { width: 100%; accent-color: var(--azul); }
+textarea { min-height: 110px; resize: vertical; }
+.subheading { margin: 24px 0 12px; color: var(--azul-claro); font-size: 16px; }
+.section-title { margin: 0 0 22px; color: var(--azul-claro); font-size: 21px; }
+button, input[type="submit"], input[type="reset"], input[type="button"] {
+    display: inline-block; margin: 12px 8px 8px 0; padding: 11px 20px;
+    background: var(--azul); border: 1px solid var(--azul); border-radius: 9px;
+    color: white; font: inherit; font-weight: 700; cursor: pointer;
+    transition: transform .2s, background .2s, box-shadow .2s;
+}
+button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+    background: #2563eb; box-shadow: 0 5px 16px #3b82f640; transform: translateY(-2px);
+}
+input[type="reset"] { background: #27364e; border-color: #42536c; color: var(--texto); }
+input[type="reset"]:hover { background: #394b65; }
+table { width: 100%; margin: 18px 0; border-collapse: collapse; background: var(--panel); color: var(--texto); }
+caption { padding: 12px; color: var(--azul-claro); font-weight: 700; text-align: left; }
+th { padding: 14px; background: #1e3a5f; color: #dbeafe; text-align: left; border: 1px solid var(--borde); }
+td { padding: 13px 14px; border: 1px solid var(--borde); vertical-align: top; }
+tbody tr:nth-child(even) { background: #1a263a; }
+tbody tr:hover { background: #243752; }
+tfoot { background: #1e3a5f; font-weight: 700; }
+.table-wrapper { width: 100%; overflow-x: auto; border: 1px solid var(--borde); border-radius: 10px; }
+.table-wrapper table { margin: 0; }
+.muted { color: var(--texto-secundario); font-size: 13px; }
+.status { display: inline-block; padding: 4px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.status-done { background: #14532d; color: #bbf7d0; }
+.status-pending { background: #713f12; color: #fde68a; }
+.status-cancelled { background: #7f1d1d; color: #fecaca; }
+.status-rescheduled { background: #1e3a8a; color: #bfdbfe; }
+input[type="file"] { color: var(--texto-secundario); font-size: 13px; }
+input[type="image"] { display: inline-block; width: 50px; height: 50px; object-fit: contain; }
+.terms-row { display: flex; align-items: flex-start; gap: 9px; margin: 20px 0; padding: 16px; background: var(--panel); border: 1px solid var(--borde); border-radius: 10px; }
+.terms-row input { flex-shrink: 0; margin-top: 5px; }
+.form-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.site-footer { max-width: 1200px; margin: 30px auto 0; padding: 18px; border-top: 1px solid var(--borde); color: var(--texto-secundario); text-align: center; font-size: 13px; }
+@media (max-width: 700px) {
+    body { padding: 12px; font-size: 14px; }
+    header { padding: 22px 18px; margin-bottom: 20px; }
+    header h1 { font-size: 30px; }
+    header h2 { font-size: 21px; }
+    fieldset, .section-card { padding: 18px 13px; }
+    .form-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .full-width { grid-column: auto; }
+    .section-title { font-size: 19px; }
+    th, td { min-width: 120px; padding: 10px; }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <p class="eyebrow">SISTEMA DE GESTIÓN AUTOMOTRIZ</p>
+        <h1>MecaGest</h1>
+        <h2>Registro de nuevos usuarios</h2>
+        <p>Completa los campos para solicitar una cuenta en el sistema.</p>
+    </header>
+
+    <main>
+        <form action="#" method="post" id="formRegistro">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="tituloCortesia">Título de cortesía</label>
+                        <select id="tituloCortesia" name="tituloCortesia">
+                            <option>Sr.</option><option>Sra.</option><option>Srita.</option>
+                            <option>Ing.</option><option>Dr.</option><option>Mtro.</option><option>Ninguno</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Jeovany" autocomplete="given-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="AppPaterno">Apellido paterno</label>
+                        <input type="text" id="AppPaterno" name="apellidoPaterno" placeholder="Cantellano" autocomplete="family-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="AppMaterno">Apellido materno</label>
+                        <input type="text" id="AppMaterno" name="apellidoMaterno" placeholder="Vargas">
+                    </div>
+                    <div class="form-group">
+                        <label for="genero">Género</label>
+                        <select id="genero" name="genero">
+                            <option value="F">Femenino</option>
+                            <option value="M">Masculino</option>
+                            <option value="X">Prefiero no decirlo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos de contacto</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Número telefónico</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="(52) 782-100-44-10" autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="horarioInicio">Horario de contacto: desde</label>
+                        <input type="time" id="horarioInicio" name="horarioInicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="horarioFin">Hasta</label>
+                        <input type="time" id="horarioFin" name="horarioFin">
+                    </div>
+                </div>
+
+                <h3 class="subheading">Redes sociales</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="check-label" for="usarFacebook">
+                            <input type="checkbox" id="usarFacebook" name="usarFacebook"> Facebook
+                        </label>
+                        <input type="url" id="urlFacebook" name="urlFacebook" placeholder="https://www.facebook.com/usuario">
+                    </div>
+                    <div class="form-group">
+                        <label class="check-label" for="usarLinkedin">
+                            <input type="checkbox" id="usarLinkedin" name="usarLinkedin"> LinkedIn
+                        </label>
+                        <input type="url" id="urlLinkedin" name="urlLinkedin" placeholder="https://www.linkedin.com/in/usuario">
+                    </div>
+                    <div class="form-group">
+                        <label class="check-label" for="usarWhatsapp">
+                            <input type="checkbox" id="usarWhatsapp" name="usarWhatsapp"> WhatsApp (cargar código QR)
+                        </label>
+                        <input type="file" id="whatsAppQR" name="whatsAppQR" accept="image/*">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos de acceso</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Jeovargas" autocomplete="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa una contraseña" autocomplete="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmarContrasena">Confirmar contraseña</label>
+                        <input type="password" id="confirmarContrasena" name="confirmarContrasena" placeholder="Repite la contraseña" autocomplete="new-password" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos de ubicación</legend>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, colonia y ciudad" autocomplete="street-address">
+                    </div>
+                    <div class="form-group">
+                        <label for="pais">País</label>
+                        <input type="text" id="pais" name="pais" placeholder="México" autocomplete="country-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <input type="text" id="estado" name="estado" placeholder="Puebla" autocomplete="address-level1">
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" name="ciudad" placeholder="Xicotepec" autocomplete="address-level2">
+                    </div>
+                    <div class="form-group">
+                        <label for="codigoPostal">Código postal</label>
+                        <input type="text" id="codigoPostal" name="codigoPostal" placeholder="73080" inputmode="numeric" autocomplete="postal-code">
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="terms-row">
+                <input type="checkbox" id="terminos" name="terminos" value="validado" required>
+                <label for="terminos">Acepto los términos y condiciones de uso de la plataforma MecaGest.</label>
+            </div>
+            <div class="form-actions">
+                <input type="submit" value="Enviar solicitud">
+                <input type="reset" value="Limpiar formulario">
+            </div>
+        </form>
+
+        <section class="section-card">
+            <h2 class="section-title">Visualización de citas por mes</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <span class="field-label">Filtrar por</span>
+                    <div class="inline-options">
+                        <label class="check-label"><input type="radio" value="mes" name="filtroCitas" checked> Mes</label>
+                        <label class="check-label"><input type="radio" value="semana" name="filtroCitas"> Semana</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mesCitas">Elige el mes</label>
+                    <input type="month" id="mesCitas" name="mesCitas">
+                </div>
+            </div>
+            <button type="button" id="verCitas">Ver citas</button>
+            <h3 class="subheading">Citas programadas</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No.</th><th>Nombre y unidad</th><th>Descripción</th>
+                            <th>Fecha programada</th><th>Estatus actual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td><td>Mauricio Mejía<br><span class="muted">Volkswagen Jetta 2020</span></td>
+                            <td>Cambio de bujías. La unidad está lista para entrega.</td>
+                            <td>10 de octubre de 2026</td><td><span class="status status-done">Atendida</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td><td>Carlos Hernández<br><span class="muted">Nissan Versa 2021</span></td>
+                            <td>Revisión del sistema de frenos por un ruido al frenar.</td>
+                            <td>12 de octubre de 2026</td><td><span class="status status-done">Atendida</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td><td>Roberto Sánchez<br><span class="muted">Chevrolet Aveo 2020</span></td>
+                            <td>Revisión para identificar un sonido extraño en la unidad.</td>
+                            <td>17 de octubre de 2026</td><td><span class="status status-pending">Programada</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td><td>Alejandra Romero<br><span class="muted">Toyota Hilux 2012</span></td>
+                            <td>Revisión del cuerpo de aceleración para posible mantenimiento correctivo.</td>
+                            <td>16 de octubre de 2026</td><td><span class="status status-cancelled">Cancelada</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td><td>Alejandra Romero<br><span class="muted">Toyota Hilux 2012</span></td>
+                            <td>Revisión del cuerpo de aceleración para posible mantenimiento correctivo.</td>
+                            <td>20 de octubre de 2026</td><td><span class="status status-rescheduled">Reprogramada</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Configuraciones de la interfaz</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="fontColor">Color de la fuente</label>
+                    <input type="color" id="fontColor" name="fontColor" value="#e5edf8">
+                </div>
+                <div class="form-group">
+                    <label for="backgroundColor">Color de fondo</label>
+                    <input type="color" id="backgroundColor" name="backgroundColor" value="#0b1120">
+                </div>
+                <div class="form-group">
+                    <label for="soundsVolume">Volumen de reproducción de sonidos</label>
+                    <input type="range" id="soundsVolume" name="soundsVolume" min="0" max="100" value="80">
+                    <button type="button" id="muteSounds0">Silenciar sonidos</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Configuración de mi perfil</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="userPhoto">Foto de usuario</label>
+                    <input type="file" id="userPhoto" name="userPhoto" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="buttonNext">Continuar</label>
+                    <input type="image" id="buttonNext" src="assets/images/next.gif" alt="Siguiente" width="50" height="50">
+                </div>
+            </div>
+            <input type="hidden" id="userId" name="userId" value="250917">
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Datos fiscales</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="rfc">Registro Federal de Contribuyentes (RFC)</label>
+                    <input type="text" id="rfc" name="rfc" maxlength="13" placeholder="RFC">
+                </div>
+                <div class="form-group">
+                    <label for="fiscalSituacion">Constancia de Situación Fiscal (PDF)</label>
+                    <input type="file" id="fiscalSituacion" name="fiscalSituacion" accept=".pdf,application/pdf">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Solicitud de cita</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="dateAppoiment">Fecha de la cita</label>
+                    <input type="datetime-local" id="dateAppoiment" name="dateAppoiment">
+                </div>
+                <div class="form-group">
+                    <label for="locations">Elige la sucursal</label>
+                    <input list="locationsList" id="locations" name="locations" placeholder="Busca tu sucursal preferida">
+                    <datalist id="locationsList">
+                        <option value="Xicotepec, centro">
+                        <option value="Xicotepec, El Tabacal">
+                        <option value="San Isidro, Tierra Negra">
+                        <option value="Necaxa, Canaditas">
+                        <option value="Huauchinango, Petrolera 1">
+                    </datalist>
+                </div>
+                <div class="form-group full-width">
+                    <label for="descriptionText">Descripción de la cita</label>
+                    <textarea id="descriptionText" name="descriptionText" placeholder="Describe brevemente el servicio que necesitas"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="section-title">Solicitud de herramienta para servicio mecánico</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <span class="field-label">Categoría de recurso</span>
+                    <div class="inline-options">
+                        <label class="check-label"><input type="radio" id="resourceRefaction" name="resourceCategory" value="refaccion"> Refacción</label>
+                        <label class="check-label"><input type="radio" id="resourceTool" name="resourceCategory" value="herramienta"> Herramienta</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="toolName">Elige la pieza o herramienta</label>
+                    <select id="toolName" name="toolName">
+                        <optgroup label="Piezas de motor">
+                            <option value="bujia">Bujía</option><option value="filtro_aceite">Filtro de aceite</option>
+                            <option value="banda_distribucion">Banda de distribución</option>
+                        </optgroup>
+                        <optgroup label="Piezas de transmisión">
+                            <option value="disco_embrague">Disco de embrague</option><option value="collarin">Collarín de embrague</option>
+                            <option value="junta_homocinetica">Junta homocinética</option><option value="semieje">Semieje de transmisión</option>
+                        </optgroup>
+                        <optgroup label="Piezas de suspensión">
+                            <option value="amortiguador">Amortiguador</option><option value="rotula">Rótula de suspensión</option>
+                        </optgroup>
+                        <optgroup label="Llaves y herramientas especializadas">
+                            <option value="llave_combinada">Llave combinada</option><option value="llave_dinamometrica">Llave dinamométrica</option>
+                            <option value="extractor_poleas">Extractor de poleas</option><option value="compresor_resortes">Compresor de resortes</option>
+                            <option value="scanner_obd2">Escáner automotriz OBD-II</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="toolQuantity">Cantidad</label>
+                    <input type="number" id="toolQuantity" name="toolQuantity" min="1" max="10" value="1">
+                </div>
+            </div>
+            <button type="button" id="requestTool">Solicitar herramienta</button>
+            <div class="table-wrapper">
+                <table>
+                    <caption>Herramientas para la orden de servicio</caption>
+                    <thead>
+                        <tr><th>No.</th><th>Herramienta</th><th>Categoría</th><th>Cantidad</th><th>Unidad</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Llave combinada</td><td>Herramienta manual</td><td>4</td><td>Piezas</td></tr>
+                        <tr><td>2</td><td>Llave dinamométrica</td><td>Herramienta especializada</td><td>2</td><td>Piezas</td></tr>
+                        <tr><td>3</td><td>Extractor de poleas</td><td>Herramienta especializada</td><td>1</td><td>Juego</td></tr>
+                        <tr><td>4</td><td>Llave Torx</td><td>Herramienta manual</td><td>3</td><td>Juegos</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><th colspan="3">Total de unidades</th><td>10</td><td>-</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 MecaGest · Sistema de gestión automotriz</p>
+    </footer>
+
+    <script>
+        // Comprobación sencilla de que las contraseñas coincidan.
+        document.getElementById("formRegistro").addEventListener("submit", function (event) {
+            const password = document.getElementById("contrasena").value;
+            const confirmPassword = document.getElementById("confirmarContrasena").value;
+
+            if (password !== confirmPassword) {
+                event.preventDefault();
+                alert("Las contraseñas no coinciden. Verifica los campos.");
+                document.getElementById("confirmarContrasena").focus();
+            } else {
+                event.preventDefault();
+                alert("Formulario validado. Para registrar usuarios realmente, debes conectarlo a un servidor.");
+            }
+        });
+
+        // Cambia la apariencia usando los controles de configuración.
+        document.getElementById("fontColor").addEventListener("input", function () {
+            document.body.style.color = this.value;
+        });
+
+        document.getElementById("backgroundColor").addEventListener("input", function () {
+            document.body.style.backgroundColor = this.value;
+        });
+
+        document.getElementById("muteSounds0").addEventListener("click", function () {
+            this.textContent = this.textContent === "Silenciar sonidos" ? "Sonido silenciado" : "Silenciar sonidos";
+        });
+
+        document.getElementById("verCitas").addEventListener("click", function () {
+            const month = document.getElementById("mesCitas").value;
+            if (!month) {
+                alert("Selecciona un mes para consultar las citas.");
+            } else {
+                alert("Filtro seleccionado: " + month + ". La consulta real requiere conectar el sistema a una base de datos.");
+            }
+        });
+
+        document.getElementById("requestTool").addEventListener("click", function () {
+            const quantity = document.getElementById("toolQuantity").value;
+            const tool = document.getElementById("toolName");
+            if (!quantity || Number(quantity) < 1 || Number(quantity) > 10) {
+                alert("Ingresa una cantidad entre 1 y 10.");
+                return;
+            }
+            alert("Solicitud preparada: " + tool.options[tool.selectedIndex].text + " (cantidad: " + quantity + "). Para guardar la solicitud se necesita una base de datos.");
+        });
+    </script>
+</body>
+</html>
