@@ -1,6 +1,23 @@
+
 /* ==========================================
-   ESTILOS GENERALES Y TIPOGRAFÍA
+   MECAGEST - DISEÑO PREMIUM
+   NEGRO + BLANCO + DORADO
    ========================================== */
+
+:root {
+    --fondo: #171717;
+    --panel: #242424;
+    --panel2: #303030;
+    --dorado: #d6b875;
+    --dorado-hover: #bd9d59;
+    --blanco: #ffffff;
+    --gris: #eeeeee;
+    --texto: #eeeeee;
+    --borde: #414141;
+    --verde: #238653;
+    --rojo: #bd4545;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,88 +25,155 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    color: #333333;
-    line-height: 1.6;
-    padding: 20px;
-}
-
-main {
-    max-width: 850px;
-    margin: 0 auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background:
+        radial-gradient(circle at top right, #383027 0%, transparent 35%),
+        #171717;
+    color: var(--texto);
+    line-height: 1.7;
+    padding: 40px 20px;
 }
 
 /* ==========================================
-   HEADER (MecaGest)
+   CONTENEDOR PRINCIPAL
    ========================================== */
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px;
+    background: #222222;
+    border: 1px solid #3b3b3b;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
 header {
+    position: relative;
     text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #0056b3;
-    padding-bottom: 15px;
+    padding: 45px 20px;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #303030, #1a1a1a);
+    border: 1px solid #454545;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(214,184,117,0.08);
+    border-radius: 50%;
+    top: -70px;
+    right: -30px;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(214,184,117,0.06);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -30px;
 }
 
 header h1 {
-    color: #0056b3;
-    font-size: 2.5rem;
+    position: relative;
+    color: var(--dorado);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 header h2 {
-    color: #555555;
-    font-size: 1.3rem;
+    position: relative;
+    color: #ffffff;
+    font-size: 1.25rem;
     font-weight: 400;
-    margin-top: 5px;
+    margin-top: 12px;
 }
 
 header p {
-    color: #777777;
-    font-size: 0.95rem;
-    font-style: italic;
+    position: relative;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    margin-top: 8px;
 }
 
 /* ==========================================
-   FORMULARIOS Y CAMPOS (Fieldsets y Labels)
+   FORMULARIOS COMO TARJETAS
    ========================================== */
+
 fieldset {
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    padding: 20px;
-    margin-bottom: 25px;
-    background-color: #fafafa;
+    position: relative;
+    background: #eeeeee;
+    border: none;
+    border-radius: 15px;
+    padding: 35px 28px 25px;
+    margin: 35px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border-top: 4px solid var(--dorado);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+fieldset:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
 legend {
-    font-weight: bold;
-    color: #0056b3;
-    padding: 0 10px;
-    font-size: 1.1rem;
+    background: #292929;
+    color: var(--dorado);
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* ==========================================
+   SUBTÍTULOS
+   ========================================== */
+
 h4 {
-    color: #444444;
-    margin: 15px 0 10px 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
+    color: #292929;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 25px 0 18px;
+    padding: 10px 15px;
+    background: #dedede;
+    border-left: 4px solid var(--dorado);
+    border-radius: 4px;
 }
+
+/* ==========================================
+   ETIQUETAS
+   ========================================== */
 
 label {
     display: inline-block;
     width: 220px;
-    margin-bottom: 12px;
-    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333333;
     font-size: 0.9rem;
-    color: #444444;
+    font-weight: 700;
     vertical-align: middle;
 }
 
-/* Inputs de texto, select, fechas y cajas de texto */
+/* ==========================================
+   CAMPOS DE FORMULARIO
+   ========================================== */
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -103,178 +187,345 @@ select,
 textarea {
     width: calc(100% - 240px);
     min-width: 250px;
-    padding: 8px 12px;
-    margin-bottom: 12px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+    padding: 13px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #c8c8c8;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #292929;
     font-family: inherit;
-    font-size: 0.9rem;
-    transition: border-color 0.3s ease;
+    font-size: 0.93rem;
+    transition: all 0.25s ease;
     vertical-align: middle;
 }
 
-input:focus, select:focus, textarea:focus {
-    border-color: #0056b3;
+input::placeholder,
+textarea::placeholder {
+    color: #999999;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: var(--dorado);
+    background: #fffdf8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.15);
+    border-color: #b99a5b;
+    box-shadow: 0 0 0 4px rgba(214,184,117,0.2);
+    background: #ffffff;
 }
 
 textarea {
-    height: 80px;
+    height: 110px;
     resize: vertical;
 }
 
-/* Modificación para inputs con formato de Radio y Checkbox */
-input[type="checkbox"],
-input[type="radio"] {
-    margin-right: 5px;
-    transform: scale(1.1);
-    vertical-align: middle;
-}
-
-/* Inputs específicos que comparten fila (como las horas de contacto) */
 input[type="time"] {
     width: auto;
     min-width: auto;
     margin-right: 10px;
 }
 
-/* Ocultar saltos de línea innecesarios ahora que usamos flex/inline-block */
+/* ==========================================
+   CHECKBOX Y RADIO
+   ========================================== */
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #aa8745;
+    transform: scale(1.15);
+    margin-right: 8px;
+    cursor: pointer;
+}
+
 fieldset br {
     display: none;
 }
 
 /* ==========================================
-   TABLAS (Visualización de Citas)
+   TABLAS MODERNAS
    ========================================== */
+
 table {
     width: 100% !important;
-    border-collapse: collapse;
-    margin: 15px 0;
-    font-size: 0.9rem;
-    background-color: #ffffff;
-}
-
-th, td {
-    border: 1px solid #dddddd !important;
-    padding: 10px 12px;
-    text-align: left;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 25px 0;
+    background: #eeeeee;
+    color: #292929;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 th {
-    background-color: #0056b3;
-    color: white;
-    font-weight: 600;
+    background: #292929;
+    color: var(--dorado);
+    padding: 16px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    border: none !important;
+}
+
+td {
+    padding: 14px 16px;
+    color: #333333;
+    border-bottom: 1px solid #d4d4d4 !important;
+    border-left: none !important;
+    border-right: none !important;
 }
 
 tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background: #dedede;
+}
+
+tr:hover {
+    background: #f8efd9;
+}
+
+tr:last-child td {
+    border-bottom: none !important;
 }
 
 /* ==========================================
-   BOTONES
+   BOTONES MODERNOS
    ========================================== */
-button, 
-input[type="submit"], 
+
+button,
+input[type="submit"],
 input[type="reset"] {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-    font-weight: bold;
+    padding: 13px 27px;
+    margin: 12px 8px 5px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    margin-right: 10px;
-    margin-top: 10px;
+    transition: all 0.25s ease;
+    letter-spacing: 0.4px;
+}
+
+button {
+    background: #292929;
+    color: var(--dorado);
+    border: 1px solid var(--dorado);
+}
+
+button:hover {
+    background: var(--dorado);
+    color: #222222;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(214,184,117,0.2);
 }
 
 input[type="submit"] {
-    background-color: #28a745;
+    background: #238653;
     color: white;
 }
 
 input[type="submit"]:hover {
-    background-color: #218838;
+    background: #176b40;
+    transform: translateY(-3px);
 }
 
 input[type="reset"] {
-    background-color: #dc3545;
+    background: #bd4545;
     color: white;
 }
 
 input[type="reset"]:hover {
-    background-color: #c82333;
+    background: #963535;
+    transform: translateY(-3px);
 }
 
-button {
-    background-color: #0056b3;
-    color: white;
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: scale(0.97);
 }
 
-button:hover {
-    background-color: #004085;
-}
-
-button:disabled, input:disabled {
-    background-color: #cccccc !important;
+button:disabled,
+input:disabled {
+    background: #bdbdbd !important;
     color: #666666 !important;
     cursor: not-allowed;
+    transform: none;
 }
 
-/* Ajuste para inputs de tipo color y rangos */
+/* ==========================================
+   COLOR Y RANGO
+   ========================================== */
+
 input[type="color"] {
-    width: 50px;
-    height: 35px;
-    padding: 2px;
+    width: 55px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 3px;
     cursor: pointer;
 }
 
 input[type="range"] {
     width: 200px;
+    accent-color: #aa8745;
 }
 
-/* Alineación especial para las filas de redes sociales */
+/* ==========================================
+   REDES SOCIALES
+   ========================================== */
+
 .red-social-row {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding: 14px;
+    background: #dedede;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    transition: all 0.25s;
+}
+
+.red-social-row:hover {
+    background: #f8efd9;
+    border-color: var(--dorado);
 }
 
 .red-social-row input[type="checkbox"] {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .red-social-row label {
-    width: 200px; /* Ajusta el espacio del texto */
-    margin-bottom: 0; /* Quita el espacio inferior para que no se desfase */
+    width: 200px;
+    margin-bottom: 0;
 }
 
 .red-social-row input[type="url"],
 .red-social-row input[type="file"] {
-    margin-bottom: 0; /* Evita que la caja de texto empuje otros elementos */
+    margin-bottom: 0;
 }
 
+/* ==========================================
+   RESULTADO DE EDAD
+   ========================================== */
 
 #resultadoEdad {
     width: 100%;
-    padding: 20px 16px;
-    margin: 8px 0 15px;
-    border: 1px dashed #cccccc;
+    padding: 25px;
+    margin: 15px 0 20px;
+    border: none;
+    border-left: 5px solid var(--dorado);
     border-radius: 10px;
-    background-color: #f8f9fa;
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #667085;
+    background: #eeeeee;
+    color: #292929;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .edad-estado--mayor {
-    color: #218052 !important;
+    color: #187344 !important;
 }
 
-.edad-estado--menor {
-    color: #c0392b !important;
-}
-
+.edad-estado--menor,
 .edad-estado--error {
-    color: #c0392b !important;
+    color: #bd3535 !important;
+}
+
+/* ==========================================
+   SCROLLBAR
+   ========================================== */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dorado);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 12px;
+    }
+
+    main {
+        padding: 18px;
+    }
+
+    header {
+        padding: 30px 12px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    fieldset {
+        padding: 28px 15px 18px;
+        margin: 28px 0;
+    }
+
+    label {
+        display: block;
+        width: 100%;
+        margin-bottom: 7px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="date"],
+    input[type="time"],
+    input[type="month"],
+    input[type="datetime-local"],
+    select,
+    textarea {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .red-social-row {
+        flex-wrap: wrap;
+    }
+
+    .red-social-row label {
+        width: auto;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+        margin-bottom: 8px;
+    }
 }

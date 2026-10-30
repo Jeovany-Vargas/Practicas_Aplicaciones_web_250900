@@ -1,7 +1,7 @@
- // Práctica 01: Primer mensaje en la consola del navegador.
+
 console.log("Hola Mundo, desde JavaScript");
 
-// Práctica 02: Calcular y mostrar la mayoría de edad.
+
 const fechaNacimiento = document.getElementById("fechaNacimiento");
 const resultadoEdad = document.getElementById("resultadoEdad");
 
