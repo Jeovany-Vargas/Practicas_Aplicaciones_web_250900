@@ -1,0 +1,466 @@
+/* =========================================
+   MECAGEST - ESTILOS GENERALES
+   ========================================= */
+
+:root {
+    --azul-oscuro: #14263D;
+    --azul-principal: #246BCE;
+    --azul-claro: #EAF2FC;
+    --gris-fondo: #F4F6F9;
+    --blanco: #FFFFFF;
+    --gris-texto: #5D6878;
+    --borde: #DCE3EC;
+    --verde: #198754;
+    --rojo: #DC3545;
+    --sombra: 0 5px 18px rgba(20, 38, 61, 0.08);
+}
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--azul-oscuro);
+    line-height: 1.6;
+}
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+
+header {
+    background: linear-gradient(135deg, #14263D, #1D4775);
+    color: var(--blanco);
+    text-align: center;
+    padding: 38px 20px;
+    border-bottom: 5px solid var(--azul-principal);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+header h2 {
+    margin: 8px 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+header p {
+    margin: 8px 0 0;
+    color: #D8E5F5;
+    font-size: 1rem;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+
+main {
+    width: min(1100px, 92%);
+    margin: 35px auto;
+}
+
+/* =========================================
+   FORMULARIOS
+   ========================================= */
+
+form {
+    margin-bottom: 30px;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 25px;
+    padding: 25px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+}
+
+legend {
+    padding: 7px 15px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* =========================================
+   ETIQUETAS
+   ========================================= */
+
+label {
+    display: inline-block;
+    margin: 10px 0 6px;
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    font-size: 0.94rem;
+}
+
+/* =========================================
+   CAMPOS DE ENTRADA
+   ========================================= */
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]):not([type="color"]):not([type="range"]),
+select,
+textarea {
+    max-width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    margin: 4px 0 12px;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    background-color: #FBFCFE;
+    color: var(--azul-oscuro);
+    font-family: inherit;
+    font-size: 0.94rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]):not([type="color"]):not([type="range"]) {
+    width: min(100%, 380px);
+}
+
+select {
+    min-width: 180px;
+    cursor: pointer;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 0 3px rgba(36, 107, 206, 0.13);
+}
+
+/* =========================================
+   CASILLAS Y OPCIONES
+   ========================================= */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    margin: 8px 6px 8px 0;
+    accent-color: var(--azul-principal);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: inline-block;
+    max-width: 100%;
+    margin: 8px 0 15px;
+    font-size: 0.9rem;
+}
+
+input[type="color"] {
+    width: 55px;
+    height: 42px;
+    padding: 4px;
+    margin: 5px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    background-color: var(--blanco);
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: min(100%, 300px);
+    accent-color: var(--azul-principal);
+    vertical-align: middle;
+}
+
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="number"] {
+    max-width: 100%;
+}
+
+/* =========================================
+   REDES SOCIALES
+   ========================================= */
+
+.red-social-row {
+    display: grid;
+    grid-template-columns: 25px 180px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+    padding: 12px;
+    background-color: #F7F9FC;
+    border: 1px solid #E9EDF3;
+    border-radius: 8px;
+}
+
+.red-social-row input[type="checkbox"] {
+    margin: 0;
+}
+
+.red-social-row label {
+    margin: 0;
+}
+
+.red-social-row input {
+    width: 100% !important;
+    min-width: 0;
+    margin: 0 !important;
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 10px 8px 5px 0;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--azul-principal);
+    color: var(--blanco);
+    font-family: inherit;
+    font-size: 0.94rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #174F9F;
+    transform: translateY(-1px);
+}
+
+input[type="reset"] {
+    background-color: #697586;
+}
+
+input[type="reset"]:hover {
+    background-color: #4B5563;
+}
+
+input[type="image"] {
+    display: inline-block;
+    max-width: 50px;
+    vertical-align: middle;
+}
+
+/* =========================================
+   TÍTULOS SECUNDARIOS
+   ========================================= */
+
+h4 {
+    margin: 20px 0 12px;
+    color: var(--azul-oscuro);
+    font-size: 1.05rem;
+}
+
+/* =========================================
+   TABLAS
+   ========================================= */
+
+table {
+    width: 100%;
+    margin: 18px 0;
+    border-collapse: collapse;
+    background-color: var(--blanco);
+    font-size: 0.91rem;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border: 1px solid var(--borde) !important;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    font-weight: 700;
+}
+
+td {
+    color: #354255;
+    overflow-wrap: anywhere;
+}
+
+tbody tr:nth-child(even),
+table tr:nth-child(even) {
+    background-color: #F4F7FB;
+}
+
+table tr:hover td {
+    background-color: #EAF2FC;
+}
+
+/* =========================================
+   CONFIGURACIONES DE INTERFAZ
+   ========================================= */
+
+fieldset label[for="fontColor"],
+fieldset label[for="backgroundColor"],
+fieldset label[for="soundsVolume"] {
+    margin-right: 10px;
+}
+
+#muteSounds {
+    background-color: var(--azul-oscuro);
+}
+
+#muteSounds:hover {
+    background-color: #263F5E;
+}
+
+/* =========================================
+   LISTAS Y ELEMENTOS AUXILIARES
+   ========================================= */
+
+input::placeholder,
+textarea::placeholder {
+    color: #929CAB;
+    opacity: 1;
+}
+
+input:disabled {
+    background-color: #E9EDF2;
+    color: #7C8797;
+    cursor: not-allowed;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--borde);
+    margin: 25px 0;
+}
+
+/* =========================================
+   RESPONSIVE: TABLETAS
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 2.1rem;
+    }
+
+    header h2 {
+        font-size: 1.15rem;
+    }
+
+    main {
+        width: 94%;
+        margin: 22px auto;
+    }
+
+    fieldset {
+        padding: 18px;
+    }
+
+    .red-social-row {
+        grid-template-columns: 22px minmax(0, 1fr);
+    }
+
+    .red-social-row input[type="url"],
+    .red-social-row input[type="file"] {
+        grid-column: 2;
+    }
+
+    table {
+        font-size: 0.82rem;
+    }
+
+    th,
+    td {
+        padding: 9px 7px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE: CELULARES
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header h2 {
+        font-size: 1rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    fieldset {
+        padding: 14px;
+    }
+
+    legend {
+        max-width: 100%;
+        font-size: 0.88rem;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type="image"]):not([type="color"]):not([type="range"]),
+    select,
+    textarea {
+        max-width: 100%;
+    }
+
+    button,
+    input[type="submit"],
+    input[type="reset"] {
+        width: 100%;
+        margin: 7px 0;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    .red-social-row {
+        padding: 9px;
+    }
+}
