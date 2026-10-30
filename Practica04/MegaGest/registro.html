@@ -1,394 +1,455 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MecaGest: registro de usuarios y gestión de citas y herramientas para taller mecánico.">
-    <title>MecaGest | Registro de usuarios</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <title>MecaGest: Formulario de Reagistro de Nuevos Usuarios - M250917 </title>
+    <link rel="stylesheet" href="css/styles.css">   
 </head>
 <body>
     <header>
-        <p class="eyebrow">SISTEMA DE GESTIÓN AUTOMOTRIZ</p>
         <h1>MecaGest</h1>
-        <h2>Registro de nuevos usuarios</h2>
-        <p>Completa los campos para solicitar una cuenta en el sistema.</p>
+        <h2>Registro de Nuveos Usuarios</h2>
+        <p>Complete los campos para solicitar una cuenta en el sistema.</p>
     </header>
 
     <main>
-        <form action="#" method="post" id="formRegistro">
+        <form action =" " method="post">
             <fieldset>
-                <legend>Datos personales</legend>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="tituloCortesia">Título de cortesía</label>
-                        <select id="tituloCortesia" name="tituloCortesia">
-                            <option>Sr.</option><option>Sra.</option><option>Srita.</option>
-                            <option>Ing.</option><option>Dr.</option><option>Mtro.</option><option>Ninguno</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Jeovany" autocomplete="given-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="AppPaterno">Apellido paterno</label>
-                        <input type="text" id="AppPaterno" name="apellidoPaterno" placeholder="Cantellano" autocomplete="family-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="AppMaterno">Apellido materno</label>
-                        <input type="text" id="AppMaterno" name="apellidoMaterno" placeholder="Vargas">
-                    </div>
-                    <div class="form-group">
-                        <label for="genero">Género</label>
-                        <select id="genero" name="genero">
-                            <option value="F">Femenino</option>
-                            <option value="M">Masculino</option>
-                            <option value="X">Prefiero no decirlo</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="fechaNacimiento">Fecha de nacimiento</label>
-                        <input type="date" id="fechaNacimiento" name="fechaNacimiento">
-                    </div>
-                </div>
+                <legend> Datos Personales </legend>
+
+                <label for="tituloCortesia">Título de Cortesía: </label>
+            <select id="tituloCortesia">
+                <option>Sr.</option>
+                <option>Sra.</option>
+                <option>Srita.</option>
+                <option>Ing.</option>
+                <option>Dr.</option>
+                <option>Mtro.</option>
+                <option>Ninguno</option>
+            </select>
+
+            <br>
+
+            <label for = "nombre"> Nombre: </label>
+            <input type ="text" id="nombre" placeholder="Leslie " required>
+
+            <br>
+
+            <label for = "AppPaterno"> Apellido Paterno: </label>
+            <input type="text" id="AppPaterno" placeholder="Tellez" required>
+
+            <br>  
+
+            <label for ="AppMaterno"> Apellido Materno: </label>
+            <input type="text" id="AppMaterno" placeholder="Ortega"> 
+
+            <br>    
+
+            <label for ="genero"> Género: </label>
+            <select id="genero">
+                <option value = "F">Femenino</option>
+                <option value = "M">Masculino</option>
+                <option value = "X">Prefiero no decirlo</option>
+            </select>
+
+            <br>
+
+            <label for = "Fecha Nacimiento"> Fecha de Nacimiento: </label>
+            <input type ="date" id="Fecha Nacimiento"> 
+
+            </fieldset>
+
+            <br>    
+
+            <fieldset>
+                <legend> Datos de contacto </legend>
+
+            <label for = "correo"> Correo Electrónico: </label>
+            <input type ="email" id="correo" placeholder="less@gmail.com"> 
+
+            <br>
+
+            <label for = "telefono"> Num. Telefonico: </label>
+            <input type ="tel" id="telefono" placeholder="(52) 782-100-44-10">
+
+            <br>
+
+            <label for="horarioContacto"> Favor de contactar en el horario: </label>
+            <input type="time" id="horarioContacto" placeholder="9:00">
+            <input type="time" id="horarioContacto" placeholder="18:00"> 
+            <br>
+            <h4> Redes Sociales </h4>
+
+<div class="red-social-row">
+    <input type="checkbox" id="checkFacebook">
+    <label for="urlfacebook"> Facebook: </label>
+    <input type="url" id="urlfacebook" placeholder="https://facebook.com">
+</div>
+
+<div class="red-social-row">
+    <input type="checkbox" id="checkLinkedin">
+    <label for="urllinkedin"> LinkedIn: </label>
+    <input type="url" id="urllinkedin" placeholder="https://linkedin.com">
+</div>
+
+<div class="red-social-row">
+    <input type="checkbox" id="checkWhatsapp">
+    <label for="urlWhatsapp"> WhatsApp (cargar QR) : </label>
+    <input type="file" id="urlWhatsapp" accept="image/*">
+</div>
+
+
             </fieldset>
 
             <fieldset>
-                <legend>Datos de contacto</legend>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="correo">Correo electrónico</label>
-                        <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" autocomplete="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Número telefónico</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="(52) 782-100-44-10" autocomplete="tel">
-                    </div>
-                    <div class="form-group">
-                        <label for="horarioInicio">Horario de contacto: desde</label>
-                        <input type="time" id="horarioInicio" name="horarioInicio">
-                    </div>
-                    <div class="form-group">
-                        <label for="horarioFin">Hasta</label>
-                        <input type="time" id="horarioFin" name="horarioFin">
-                    </div>
-                </div>
+                <legend>Datos de Acceso</legend>
+                <label for="usuario"> Usuario: </label>
+                <input type="text" id="usuario" placeholder="dulcegarcia" required>
 
-                <h3 class="subheading">Redes sociales</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label class="check-label" for="usarFacebook">
-                            <input type="checkbox" id="usarFacebook" name="usarFacebook"> Facebook
-                        </label>
-                        <input type="url" id="urlFacebook" name="urlFacebook" placeholder="https://www.facebook.com/usuario">
-                    </div>
-                    <div class="form-group">
-                        <label class="check-label" for="usarLinkedin">
-                            <input type="checkbox" id="usarLinkedin" name="usarLinkedin"> LinkedIn
-                        </label>
-                        <input type="url" id="urlLinkedin" name="urlLinkedin" placeholder="https://www.linkedin.com/in/usuario">
-                    </div>
-                    <div class="form-group">
-                        <label class="check-label" for="usarWhatsapp">
-                            <input type="checkbox" id="usarWhatsapp" name="usarWhatsapp"> WhatsApp (cargar código QR)
-                        </label>
-                        <input type="file" id="whatsAppQR" name="whatsAppQR" accept="image/*">
-                    </div>
-                </div>
+                <br>
+
+                <label for="contrasena"> Contraseña: </label>
+                <input type="password" id="contrasena" placeholder="**********" required>
+
+                <br>
+
+                <label for="confirmarContrasena"> Confimar Contraseña: </label>
+                <input type="password" id="confirmarContrasena" placeholder="***********" required> 
             </fieldset>
 
             <fieldset>
-                <legend>Datos de acceso</legend>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="usuario">Usuario</label>
-                        <input type="text" id="usuario" name="usuario" placeholder="Jeovargas" autocomplete="username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa una contraseña" autocomplete="new-password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmarContrasena">Confirmar contraseña</label>
-                        <input type="password" id="confirmarContrasena" name="confirmarContrasena" placeholder="Repite la contraseña" autocomplete="new-password" required>
-                    </div>
-                </div>
+                <legend>Datos de Ubicación</legend>
+
+                <label for="direccion"> Dirección: </label>
+                <input type="text" id="direccion" placeholder="Calle, Numero, Colonia, Ciudad, Estado, Codigo Postal">
+
+                <br>
+
+                <label for="pais"> País: </label>
+                <input type="text" id="pais" placeholder="Mexico" >
+
+                <br> 
+
+                <label for="estado"> Estado: </label>
+                <input type="text" id="estado" placeholder="Ciudad de Mexico">
+
+                <br>
+
+                <label for="ciudad"> Ciudad: </label>
+                <input type="text" id="ciudad" placeholder="Ciudad de Mexico">
+
+                <br>
+
+                <label for="codigoPostal" > Codigo Postal: </label>
+                <input type="text" id="codigoPostal" placeholder="78000">
+
             </fieldset>
 
-            <fieldset>
-                <legend>Datos de ubicación</legend>
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label for="direccion">Dirección</label>
-                        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, colonia y ciudad" autocomplete="street-address">
-                    </div>
-                    <div class="form-group">
-                        <label for="pais">País</label>
-                        <input type="text" id="pais" name="pais" placeholder="México" autocomplete="country-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="estado">Estado</label>
-                        <input type="text" id="estado" name="estado" placeholder="Puebla" autocomplete="address-level1">
-                    </div>
-                    <div class="form-group">
-                        <label for="ciudad">Ciudad</label>
-                        <input type="text" id="ciudad" name="ciudad" placeholder="Xicotepec" autocomplete="address-level2">
-                    </div>
-                    <div class="form-group">
-                        <label for="codigoPostal">Código postal</label>
-                        <input type="text" id="codigoPostal" name="codigoPostal" placeholder="73080" inputmode="numeric" autocomplete="postal-code">
-                    </div>
-                </div>
-            </fieldset>
+            <input type="checkbox" value="validado">
+Acepto términos y condiciones del uso de la plataforma MecaGest.
 
-            <div class="terms-row">
-                <input type="checkbox" id="terminos" name="terminos" value="validado" required>
-                <label for="terminos">Acepto los términos y condiciones de uso de la plataforma MecaGest.</label>
-            </div>
-            <div class="form-actions">
-                <input type="submit" value="Enviar solicitud">
-                <input type="reset" value="Limpiar formulario">
-            </div>
+<br><br>
+
+<input type="submit" value="Enviar Solicitud">
+<input type="reset" value="Limpiar Formularios">
+
         </form>
 
-        <section class="section-card">
-            <h2 class="section-title">Visualización de citas por mes</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <span class="field-label">Filtrar por</span>
-                    <div class="inline-options">
-                        <label class="check-label"><input type="radio" value="mes" name="filtroCitas" checked> Mes</label>
-                        <label class="check-label"><input type="radio" value="semana" name="filtroCitas"> Semana</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="mesCitas">Elige el mes</label>
-                    <input type="month" id="mesCitas" name="mesCitas">
-                </div>
-            </div>
-            <button type="button" id="verCitas">Ver citas</button>
-            <h3 class="subheading">Citas programadas</h3>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>No.</th><th>Nombre y unidad</th><th>Descripción</th>
-                            <th>Fecha programada</th><th>Estatus actual</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td><td>Mauricio Mejía<br><span class="muted">Volkswagen Jetta 2020</span></td>
-                            <td>Cambio de bujías. La unidad está lista para entrega.</td>
-                            <td>10 de octubre de 2026</td><td><span class="status status-done">Atendida</span></td>
-                        </tr>
-                        <tr>
-                            <td>2</td><td>Carlos Hernández<br><span class="muted">Nissan Versa 2021</span></td>
-                            <td>Revisión del sistema de frenos por un ruido al frenar.</td>
-                            <td>12 de octubre de 2026</td><td><span class="status status-done">Atendida</span></td>
-                        </tr>
-                        <tr>
-                            <td>3</td><td>Roberto Sánchez<br><span class="muted">Chevrolet Aveo 2020</span></td>
-                            <td>Revisión para identificar un sonido extraño en la unidad.</td>
-                            <td>17 de octubre de 2026</td><td><span class="status status-pending">Programada</span></td>
-                        </tr>
-                        <tr>
-                            <td>4</td><td>Alejandra Romero<br><span class="muted">Toyota Hilux 2012</span></td>
-                            <td>Revisión del cuerpo de aceleración para posible mantenimiento correctivo.</td>
-                            <td>16 de octubre de 2026</td><td><span class="status status-cancelled">Cancelada</span></td>
-                        </tr>
-                        <tr>
-                            <td>5</td><td>Alejandra Romero<br><span class="muted">Toyota Hilux 2012</span></td>
-                            <td>Revisión del cuerpo de aceleración para posible mantenimiento correctivo.</td>
-                            <td>20 de octubre de 2026</td><td><span class="status status-rescheduled">Reprogramada</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        <br>
+        <br> 
 
-        <section class="section-card">
-            <h2 class="section-title">Configuraciones de la interfaz</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="fontColor">Color de la fuente</label>
-                    <input type="color" id="fontColor" name="fontColor" value="#e5edf8">
-                </div>
-                <div class="form-group">
-                    <label for="backgroundColor">Color de fondo</label>
-                    <input type="color" id="backgroundColor" name="backgroundColor" value="#0b1120">
-                </div>
-                <div class="form-group">
-                    <label for="soundsVolume">Volumen de reproducción de sonidos</label>
-                    <input type="range" id="soundsVolume" name="soundsVolume" min="0" max="100" value="80">
-                    <button type="button" id="muteSounds0">Silenciar sonidos</button>
-                </div>
-            </div>
-        </section>
+        <form> <!-- Elementos input que usaremos más adelante -->
+    <fieldset>
+        <legend>Visualización de Citas por Mes:</legend>
 
-        <section class="section-card">
-            <h2 class="section-title">Configuración de mi perfil</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="userPhoto">Foto de usuario</label>
-                    <input type="file" id="userPhoto" name="userPhoto" accept="image/*">
-                </div>
-                <div class="form-group">
-                    <label for="buttonNext">Continuar</label>
-                    <input type="image" id="buttonNext" src="assets/images/next.gif" alt="Siguiente" width="50" height="50">
-                </div>
-            </div>
-            <input type="hidden" id="userId" name="userId" value="250917">
-        </section>
+        <label for="mesCitas">Por favor elige el mes:</label>
 
-        <section class="section-card">
-            <h2 class="section-title">Datos fiscales</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="rfc">Registro Federal de Contribuyentes (RFC)</label>
-                    <input type="text" id="rfc" name="rfc" maxlength="13" placeholder="RFC">
-                </div>
-                <div class="form-group">
-                    <label for="fiscalSituacion">Constancia de Situación Fiscal (PDF)</label>
-                    <input type="file" id="fiscalSituacion" name="fiscalSituacion" accept=".pdf,application/pdf">
-                </div>
-            </div>
-        </section>
+        <label for="mesCitas" > Po favor , elige el filtro: </label>     
 
-        <section class="section-card">
-            <h2 class="section-title">Solicitud de cita</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="dateAppoiment">Fecha de la cita</label>
-                    <input type="datetime-local" id="dateAppoiment" name="dateAppoiment">
-                </div>
-                <div class="form-group">
-                    <label for="locations">Elige la sucursal</label>
-                    <input list="locationsList" id="locations" name="locations" placeholder="Busca tu sucursal preferida">
-                    <datalist id="locationsList">
-                        <option value="Xicotepec, centro">
-                        <option value="Xicotepec, El Tabacal">
-                        <option value="San Isidro, Tierra Negra">
-                        <option value="Necaxa, Canaditas">
-                        <option value="Huauchinango, Petrolera 1">
-                    </datalist>
-                </div>
-                <div class="form-group full-width">
-                    <label for="descriptionText">Descripción de la cita</label>
-                    <textarea id="descriptionText" name="descriptionText" placeholder="Describe brevemente el servicio que necesitas"></textarea>
-                </div>
-            </div>
-        </section>
+        <input type="radio" value="Month" name="appoimentFilter" id="appoimentByMonth" checked> Mes 
+        <input type="radio" value="Month" name="appoimentFilter" id="appoimentByWeek" > Semana 
 
-        <section class="section-card">
-            <h2 class="section-title">Solicitud de herramienta para servicio mecánico</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <span class="field-label">Categoría de recurso</span>
-                    <div class="inline-options">
-                        <label class="check-label"><input type="radio" id="resourceRefaction" name="resourceCategory" value="refaccion"> Refacción</label>
-                        <label class="check-label"><input type="radio" id="resourceTool" name="resourceCategory" value="herramienta"> Herramienta</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="toolName">Elige la pieza o herramienta</label>
-                    <select id="toolName" name="toolName">
-                        <optgroup label="Piezas de motor">
-                            <option value="bujia">Bujía</option><option value="filtro_aceite">Filtro de aceite</option>
-                            <option value="banda_distribucion">Banda de distribución</option>
-                        </optgroup>
-                        <optgroup label="Piezas de transmisión">
-                            <option value="disco_embrague">Disco de embrague</option><option value="collarin">Collarín de embrague</option>
-                            <option value="junta_homocinetica">Junta homocinética</option><option value="semieje">Semieje de transmisión</option>
-                        </optgroup>
-                        <optgroup label="Piezas de suspensión">
-                            <option value="amortiguador">Amortiguador</option><option value="rotula">Rótula de suspensión</option>
-                        </optgroup>
-                        <optgroup label="Llaves y herramientas especializadas">
-                            <option value="llave_combinada">Llave combinada</option><option value="llave_dinamometrica">Llave dinamométrica</option>
-                            <option value="extractor_poleas">Extractor de poleas</option><option value="compresor_resortes">Compresor de resortes</option>
-                            <option value="scanner_obd2">Escáner automotriz OBD-II</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="toolQuantity">Cantidad</label>
-                    <input type="number" id="toolQuantity" name="toolQuantity" min="1" max="10" value="1">
-                </div>
-            </div>
-            <button type="button" id="requestTool">Solicitar herramienta</button>
-            <div class="table-wrapper">
-                <table>
-                    <caption>Herramientas para la orden de servicio</caption>
-                    <thead>
-                        <tr><th>No.</th><th>Herramienta</th><th>Categoría</th><th>Cantidad</th><th>Unidad</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Llave combinada</td><td>Herramienta manual</td><td>4</td><td>Piezas</td></tr>
-                        <tr><td>2</td><td>Llave dinamométrica</td><td>Herramienta especializada</td><td>2</td><td>Piezas</td></tr>
-                        <tr><td>3</td><td>Extractor de poleas</td><td>Herramienta especializada</td><td>1</td><td>Juego</td></tr>
-                        <tr><td>4</td><td>Llave Torx</td><td>Herramienta manual</td><td>3</td><td>Juegos</td></tr>
-                    </tbody>
-                    <tfoot>
-                        <tr><th colspan="3">Total de unidades</th><td>10</td><td>-</td></tr>
-                    </tfoot>
-                </table>
-            </div>
-        </section>
-    </main>
+        <br>
 
-    <footer class="site-footer">
-        <p>© 2026 MecaGest · Sistema de gestión automotriz</p>
-    </footer>
+        <input type="month">
+        <br>
+        <input type="week" disabled>
+        <br>
 
-    <script>
-        // Comprobación sencilla de que las contraseñas coincidan.
-        document.getElementById("formRegistro").addEventListener("submit", function (event) {
-            const password = document.getElementById("contrasena").value;
-            const confirmPassword = document.getElementById("confirmarContrasena").value;
+        <button id="verCitas">Ver Citas</button>
 
-            if (password !== confirmPassword) {
-                event.preventDefault();
-                alert("Las contraseñas no coinciden. Verifica los campos.");
-                document.getElementById("confirmarContrasena").focus();
-            } else {
-                event.preventDefault();
-                alert("Formulario validado. Para registrar usuarios realmente, debes conectarlo a un servidor.");
-            }
-        });
+        <br>
 
-        // Cambia la apariencia usando los controles de configuración.
-        document.getElementById("fontColor").addEventListener("input", function () {
-            document.body.style.color = this.value;
-        });
+        <h4>Las citas programadas para el mes elegido son:</h4>
 
-        document.getElementById("backgroundColor").addEventListener("input", function () {
-            document.body.style.backgroundColor = this.value;
-        });
+        <br>
 
-        document.getElementById("muteSounds0").addEventListener("click", function () {
-            this.textContent = this.textContent === "Silenciar sonidos" ? "Sonido silenciado" : "Silenciar sonidos";
-        });
+        <table style="border: 1px solid black">
+            <tr>
+                <th style="border: 1px solid black">No.</th>
+                <th style="border: 1px solid black">Nombre</th>
+                <th style="border: 1px solid black">Descripción</th>
+                <th style="border: 1px solid black">Fecha Programada</th>
+                <th style="border: 1px solid black">Estatus Actual</th>
+            </tr>
 
-        document.getElementById("verCitas").addEventListener("click", function () {
-            const month = document.getElementById("mesCitas").value;
-            if (!month) {
-                alert("Selecciona un mes para consultar las citas.");
-            } else {
-                alert("Filtro seleccionado: " + month + ". La consulta real requiere conectar el sistema a una base de datos.");
-            }
-        });
+            <tr>
+                <td style="border: 1px solid black">1.</td>
+                <td style="border: 1px solid black">
+                    Cita de entrega de unidad reparada con el cliente: Mauricio Mejía,
+                    Unidad: Volkswagen, Jetta 2020
+                </td>
+                <td style="border: 1px solid black">
+                    Se realizó un cambio de bujías, la unidad está lista para entrega
+                </td>
+                <td style="border: 1px solid black">10 de Octubre de 2026</td>
+                <td style="border: 1px solid black">Atendida</td>
+            </tr>
 
-        document.getElementById("requestTool").addEventListener("click", function () {
-            const quantity = document.getElementById("toolQuantity").value;
-            const tool = document.getElementById("toolName");
-            if (!quantity || Number(quantity) < 1 || Number(quantity) > 10) {
-                alert("Ingresa una cantidad entre 1 y 10.");
-                return;
-            }
-            alert("Solicitud preparada: " + tool.options[tool.selectedIndex].text + " (cantidad: " + quantity + "). Para guardar la solicitud se necesita una base de datos.");
-        });
-    </script>
+            <tr>
+    <td style="border: 1px solid black;">2.</td>
+    <td style="border: 1px solid black;">
+        Cita de valoración con el cliente: Carlos Hernández,
+        Unidad: Nissan, Versa 2021
+    </td>
+    <td style="border: 1px solid black;">
+        El cliente solicita una revisión del sistema de frenos
+        debido a un ruido al momento de frenar.
+    </td>
+    <td style="border: 1px solid black;">
+        12 de Octubre de 2026
+    </td>
+    <td style="border: 1px solid black;">
+        Atendida
+    </td>
+</tr>
+
+<tr>
+    <td style="border: 1px solid black;">3.</td>
+    <td style="border: 1px solid black;">
+        Cita de revisión con el cliente: Roberto Sánchez,
+        Unidad: Chevrolet, Aveo 2020
+    </td>
+    <td style="border: 1px solid black;">
+        El cliente reporta un sonido extraño en la unidad
+        y solicita una revisión para identificar la causa.
+    </td>
+    <td style="border: 1px solid black;">
+        17 de Octubre de 2026
+    </td>
+    <td style="border: 1px solid black;">
+        Programada
+    </td>
+</tr>
+
+<tr>
+    <td style="border: 1px solid black;">4.</td>
+    <td style="border: 1px solid black;">
+        Cita de valoración con la cliente: Alejandra Romero,
+        Unidad: Toyota, Hilux 2012
+    </td>
+    <td style="border: 1px solid black;">
+        El cliente solicita una revisión del cuerpo de aceleración
+        de la unidad para posible mantenimiento correctivo.
+    </td>
+    <td style="border: 1px solid black;">16 de Octubre de 2026</td>
+    <td style="border: 1px solid black;">Cancelada</td>
+</tr>
+
+<tr>
+    <td style="border: 1px solid black;">5.</td>
+    <td style="border: 1px solid black;">
+        Cita de valoración con la cliente: Alejandra Romero,
+        Unidad: Toyota, Hilux 2012
+    </td>
+    <td style="border: 1px solid black;">
+        El cliente solicita una revisión del cuerpo de aceleración
+        de la unidad para posible mantenimiento correctivo.
+    </td>
+    <td style="border: 1px solid black;">20 de Octubre de 2026</td>
+    <td style="border: 1px solid black;">Reprogramada</td>
+</tr>
+
+           </table>
+    </fieldset>
+</form>
+
+<fieldset>
+    <legend>Configuraciones de la Interfaz:</legend>
+
+    <label for="fontColor">Color de la Fuente</label>
+    <input type="color" id="fontColor">
+
+    <br>
+
+    <label for="backgroundColor">Color de Fondo</label>
+    <input type="color" id="backgroundColor" value="#CCC">
+    <br>
+
+    <label for="soundsVolume"> Vlumen de reproduccion de Sonidos</label>
+    <input type="range" id="soundsVolume" min="0" max="100" value="50">
+
+    <button id="muteSounds">Silenciar Sonidos</button>
+</fieldset>
+
+    <fieldset>
+        <legend>Configuracion de mi Perfil</legend>
+        <label for="userPhoto" > Foto de Usuario:</label>
+
+        <input type="file" id="userPhoto" accept="image/*">
+        <input type="image" id="buttonNext" src="assents/images/next.gif" alt="Siguiente" width="50" height="50"> 
+        <br>
+        <input type="hidden" id="userId" value="250917">
+    </fieldset>
+
+    <fieldset>
+        <legend>Datos Fiscales</legend>
+        <label for="rfc"> Registro Federal de Causantes (RFC): </label>
+        <input type="text" id="rfc" maxlength="13" placeholder="TD0XXXXXXXXXX">
+        <br>
+        <label for="fiscalSituacion"> Constancia de Situacion Fiscal: </label>
+        <input type="file" id="fiscalSituacion" accept=".pdf">
+        <input type="hidden" id="userId" value="250917"> 
+    </fieldset>
+
+    <fieldset>
+        <legend> Solicitud de Cita: </legend>
+        <label for="dateAppoiment"> Fecha de la Cita: </label>
+        <input type="datetime-local" id="dateAppoiment">
+        <br>
+
+        <label for="locations" > Elige la sucursal: </label>
+        <input list="locationsList" placeholder="Elige la sucursal" id="locations">
+        <datalist id="locationsList">
+            <option> Xicotepec, Centro </option>
+            <option> Xicotepec, El tabacal  </option>
+            <option> San Isidro, Tierra Negra  </option>
+            <option> Necaxa, Canaditas   </option>
+            <option> Huauchinango, Petrolera 1 </option>
+
+        </datalist>
+        <br>
+        <br>
+        <label for="descriptionText"> Descripcion de la Cita: </label>
+        <textarea id="descriptionText"> </textarea>
+    </fieldset>
+
+    <fieldset>
+
+        <legend> Solicitud de Herramientas y Refacciones para Servicio Mecanico: </legend>
+        <label for="resourceCategory"> Categoria de Recursos: </label>
+        <input type="radio" id="resourceRefaction" name="resourceCategory" value="refaccion"> Refaccion
+        <input type="radio" id="resourceTool" name="resourceCategory" value="tool"> Herramienta
+
+        <br> 
+
+        <legend> Solicitud de Herramienta para Servicio Mécanico: </legend>
+        <label for="toolName"> Elgige la pieza: </label>
+        <select>
+            <optgroup label="Piezas de Motor">
+                <option value="bujia"> Bujía </option>
+                <option value="filtro_aceite"> Filtro de Aceite</option>
+                <option value="banda_distribucion"> Banda de Distribucion </option>
+            </optgroup>
+
+            <optgroup label= "Piezas de Transmision">
+                <option value="disco_enbrague"> Disco de enbrague </option>
+                <option value="collarin"> Collarín de enbrague </option>
+                <option value="junta_homocinetica"> Junta homocinetica </option>
+                <option value="semieje"> Semeije de transmision </option>
+            </optgroup>
+
+            <optgroup label="Piezas de Suspencion">
+                <option value="amortiguador"> Amortiguador </option>
+                <option value="rotula"> Rótula de suspension </option>
+            </optgroup>
+
+            <optgroup label="Llaves y Herramientas Especializadas">
+                <option value="llave_combinada"> Llave combinada </option>
+                <option value="llave_torx"> Llave dinometrica</option>
+                <option value="extractor_poleas"> Extractor de poleas </option>
+                <option value="comprensor_resortes"> Comprensor de resortes</option>
+                <option value="scanner_obd2"> Escaner automotriz ODB-II</option>
+            </optgroup>
+        </select>
+        <label for="toolQuantity"> Cantidad: </label>
+        <input type="number" id="toolQuantity" min="1" max="10">
+        <button id="requestTool">Solicitar Herramienta </button>
+        <br> 
+
+        <br> 
+
+        Herramientas para la orden de servicio
+
+        <table style="border: 1px solid black; border-collapse: collapse; width: 50%"> 
+            <tr>
+                <th style="border: 1px solid black">No.</th>
+                <th style="border: 1px solid black">Herramienta</th>
+                <th style="border: 1px solid black">Categoria</th>
+                <th style="border: 1px solid black">Cantidad</th>
+                <th style="border: 1px solid black">Unidad</th>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">1.</td>
+                <td style="border: 1px solid black">
+                    Llave combinada 
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta manual 
+                </td>
+                <td style="border: 1px solid black">4 </td>
+                <td style="border: 1px solid black">Piezas </td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">2.</td>
+                <td style="border: 1px solid black">
+                    Llave dinamometrica 
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta especializada 
+                </td>
+                <td style="border: 1px solid black"> 2 </td>
+                <td style="border: 1px solid black">Piezas </td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">3.</td>
+                <td style="border: 1px solid black">
+                    Extractor de poleas  
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta especializada 
+                </td>
+                <td style="border: 1px solid black"> 1 </td>
+                <td style="border: 1px solid black"> Juego </td>
+            </tr>
+
+            <tr>
+                <td style="border: 1px solid black">4.</td>
+                <td style="border: 1px solid black">
+                    Llave Torx  
+                </td>
+                <td style="border: 1px solid black">
+                    Herramienta manual 
+                </td>
+                <td style="border: 1px solid black"> 3 </td>
+                <td style="border: 1px solid black"> Juegos </td>
+            </tr>
+
+            <tr> 
+                <th colspan="3" style="border: 1px solid black; text-align: center;">Total Unidades</th> 
+                <td style="border: 1px solid black;">10</td>
+                <td style="border: 1px solid black;">-</td> 
+            </tr> 
+
+        </table>
+    </fieldset>
+
+
+
+</main>
 </body>
 </html>
